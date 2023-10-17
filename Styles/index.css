@@ -1,0 +1,35 @@
+.navigation{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: aqua;
+}
+
+.navigation a{
+    display: flex;
+    margin-left: 10px;
+}
+
+
+
+  @media (max-width: 600px) {
+    .navigation {
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+    }
+  
+    .navbar-logo {
+      position: static;
+      margin-bottom: 10px;
+    }
+  
+    .navigation {
+      flex-direction: column;
+    }
+  
+    .navigation a {
+      margin: 5px 0;
+    }
+  }
+  
