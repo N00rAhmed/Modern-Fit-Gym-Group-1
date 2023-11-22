@@ -1,3 +1,8 @@
+body{
+  min-height: 100vh;
+  margin: 0px;
+}
+
 .navigation{
     display: flex;
     /* justify-content: center; */
@@ -90,6 +95,21 @@
     }
   }
   
+  footer{
+    background-color: #0d96b4;
+    position: relative;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+ }
 
-  .footer {
+ footer a{
+  margin-top: 0px;
+ }
+
+ footer p{
+  display: inline;
+  margin-right: 25px;
  }
