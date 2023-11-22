@@ -1,4 +1,15 @@
+.navigation{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* background-color: aqua; */
+  background-color: #087891;
+}
 
+.navigation a{
+  display: flex;
+  margin-left: 10px;
+}
 
 .card {
     background-color: dodgerblue;
@@ -8,7 +19,7 @@
   }
 
     .card1 {
-        background-color: rgb(97, 114, 131);
+        background-color: #837f85;
         color: white;
         height: 250px;
         width: 650px;
@@ -26,6 +37,13 @@
             height: 250px;
             width: 650px;
         }
+
+    .card4 {
+      background-color: rgb(73, 84, 95);
+      color: white;
+      height: 250px;
+      width: 650px;
+    }
 
   .cards {
     max-width: 1200px;
