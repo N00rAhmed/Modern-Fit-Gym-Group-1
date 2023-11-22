@@ -1,0 +1,12 @@
+.navigation{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: aqua; */
+    background-color: #087891;
+}
+
+.navigation a{
+    display: flex;
+    margin-left: 10px;
+}
