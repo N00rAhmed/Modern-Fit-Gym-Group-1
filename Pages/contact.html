@@ -5,25 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/contact.css">
     <title>Contact</title>
-    <div class="navigation">
-      <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
-      <h2>Modern FIT Gym Home Page</h2>
-      <a href="./index.html">Home</a>
-      <a href="./login.html">Login</a>
-      <a href="./contact.html">Contact</a>
-  
-  </div>
 </head>
 <body>
-    <h1>Contact Us</h1>
-    <div class="input">
-      <input type="text" placeholder="name" />
-      <input type="text" placeholder="message" />
+  <div class="navigation">
+    <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px"/>
+    <h2>Modern FIT Gym Home Page</h2>
+    <a href="./index.html">Home</a>
+    <a href="./login.html">Login</a>
+    <a href="./contact.html">Contact</a>
+  </div>
+
+  <main>
+    <div>
+      <h1>Contact Us</h1>
+      <p>You can contact is through the following methods</p>
+      <p>Phone Number: 10101010010101</p>
+      <p>Email: Example123@gmail.com</p>
+      <p>or through the contact form below</p>
     </div>
-    <br />
-    <div class="button">
-      <button>send</button>
-    </div>
+    <form>
+      <fieldset>
+        <legend>Contact Us Form</legend>
+        <div>
+          <label for="Email">Name</label>
+          <input type="text" name id="Email" placeholder="enter your email" required/>
+        </div>
+        <br>
+        <div>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="5" placeholder="enter your message"></textarea>
+        </div>
+        <br>
+        <div>
+          <button>send</button>
+        </div>
+      </fieldset>
+    </form>
+  </main>
 
   </body>
 </html>
