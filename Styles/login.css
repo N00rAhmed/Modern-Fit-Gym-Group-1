@@ -25,15 +25,91 @@ main{
   }  
 
 .input {
-    display: grid;
+    /* display: grid; 
     grid-template-columns: 1fr;
     gap: 10px;
-    width: 50px;
+    width: 50px; */
+    display: grid;
+    place-items: center;
+
 }
 
-.buttons{
+.subtitle{
+    text-align: center;
+} 
+
+/* .grid-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns, adjust as needed */
+    /* gap: 10px;
+    text-align: center;
+} */ */
+
+/* .buttons{
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 1520px;
+} */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0; 
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.input {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
-    width: 50px;
+    text-align: center;
+    margin-top: 20px; 
 }
+
+.input input {
+    padding: 8px;
+    width: 60%; 
+    box-sizing: border-box; 
+}
+
+.button, .button2 {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 200px; 
+    margin: 20px auto; 
+}
+
+.button a, .button2 a {
+    text-decoration: none;
+    color: #007bff; 
+}
+
+.button button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.button button:hover {
+    background-color: #0056b3;
+}
+
+.button2 a:hover {
+    text-decoration: underline;
+}
+
+fieldset{
+    width: 80%;
+    margin: auto;
+}
+
+
