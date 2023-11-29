@@ -16,15 +16,33 @@
     </div>
 
     <h2>Diary Entry</h2>
-    <div class="input">
-      <input type="text" placeholder="Date" />
+    <!-- <div class="input">
+      <input width="500px" type="text" placeholder="Date" />
       <input type="text" placeholder="Calorie Intake"/>
       <input type="text" placeholder="Supplement Intake"/>
       <input type="text" placeholder="Exercise Duration"/>
       <input type="text" placeholder="Calorie Intake"/>
       <input type="text" placeholder="Daily Duration"/>
       <input type="text" placeholder="Notes"/>
-    </div>
+    </div> -->
+    <form>
+        <fieldset>
+          <legend>Diary</legend>
+          <div>
+            <label for="Diary"></label>
+            <input type="text" name id="Email" placeholder="enter your email" required/>
+          </div>
+          <br>
+          <div>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" placeholder="enter your message"></textarea>
+          </div>
+          <br>
+          <div>
+            <button>send</button>
+          </div>
+        </fieldset>
+      </form>
     <br />
     <div class="buttons">
     <button>Add</button>
