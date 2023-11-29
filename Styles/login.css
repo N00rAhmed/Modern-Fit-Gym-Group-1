@@ -1,4 +1,4 @@
-.navigation{
+nav{
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -6,10 +6,23 @@
     background-color: #087891;
 }
 
-.navigation a{
+nav a{
     display: flex;
     margin-left: 10px;
 }
+
+main{
+    width: 90%;
+    margin: auto;
+  }
+  
+  main h1{
+    text-align: center;
+  }
+  
+  main p{
+    text-align: center;
+  }  
 
 .input {
     /* display: grid; 
