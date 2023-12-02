@@ -4,11 +4,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.navigation {
-  /*display: flex;
-  justify-content: center; 
-  /*align-items: center;
-  background-color: #0d96b4; */
+nav {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
   overflow: hidden;
   background-color: #0d96b4;
 }
@@ -25,7 +24,9 @@ body {
   border: 0.5;
 }
 
-.navigation a {
+nav a {
+  display: flex;
+  margin-left: 10px;
   background-color: #0d96b4;
   font-size: 18px;
 }
@@ -44,6 +45,19 @@ body {
   padding-top: 20px;
   flex-direction: row;
 } */
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+main h1 {
+  text-align: center;
+}
+
+main p {
+  text-align: center;
+}
 
 .container {
   max-width: 1300px;
