@@ -1,0 +1,37 @@
+nav{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: aqua; */
+    background-color: #087891;
+}
+
+nav a{
+    display: flex;
+    margin-left: 10px;
+}
+
+main{
+    width: 90%;
+    margin: auto;
+  }
+  
+  main h1{
+    text-align: center;
+  }
+  
+  main p{
+    text-align: center;
+  }
+  
+.diary-container{
+    height: 400px;
+    width: 900px;
+    background-color: #087891;
+    border: 2px solid black;
+}
+
+ul {
+    list-style-type: none;
+  }
+  

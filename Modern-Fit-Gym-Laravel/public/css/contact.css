@@ -1,0 +1,49 @@
+nav{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: aqua; */
+    background-color: #087891;
+}
+
+nav a{
+    display: flex;
+    margin-left: 10px;
+}
+
+main{
+    width: 90%;
+    margin: auto;
+}
+
+main h1{
+    text-align: center;
+}
+
+main p{
+    text-align: center;
+}
+
+main form{
+    margin: auto;
+    width: fit-content;
+}
+
+main form fieldset{
+    font-size: 1.05rem;
+}
+
+main form label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.05rem;
+}
+
+main form input{
+    font-size: 1.05rem;
+}
+
+main form textarea{
+    font-size: 1.05rem;
+}
+
