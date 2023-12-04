@@ -1,0 +1,34 @@
+nav {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #0d96b4;
+  }
+  
+  nav a {
+    display: flex;
+    margin-left: 10px;
+  }
+
+  /* previousely max-width: 600px */
+  @media (max-width: 800px) {
+    nav {
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+    }
+  
+    .navbar-logo {
+      position: static;
+      margin-bottom: 10px;
+    }
+  
+    nav {
+      flex-direction: column;
+    }
+  
+    nav a {
+      margin: 5px 0;
+    }
+  }
+  
