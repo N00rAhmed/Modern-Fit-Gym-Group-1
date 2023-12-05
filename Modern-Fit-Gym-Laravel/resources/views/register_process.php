@@ -39,7 +39,7 @@ $result = $stmt->execute();
 
 if ($result) {
     echo "Registration successful!";
-    header("Location: login.html");
+    header("Location: /login");
     exit();
 
 } else {

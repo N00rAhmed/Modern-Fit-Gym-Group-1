@@ -1,26 +1,12 @@
-nav{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    /* background-color: aqua; */
-    background-color: #087891;
-}
-
-nav a{
-    display: flex;
-    margin-left: 10px;
-}
-
-main{
+main {
     width: 90%;
     margin: auto;
-  }
-  
-  main h1{
+}
+
+main h1 {
     text-align: center;
-  }
-  
-  main p{
+}
+
+main p {
     text-align: center;
-  }
-  
+}
