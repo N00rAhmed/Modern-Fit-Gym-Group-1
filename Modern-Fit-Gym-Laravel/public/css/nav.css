@@ -1,34 +1,75 @@
+/*need to make css file for once logged in and using their ID to check so they have the log out button avaliable.*/
+
+body {
+    min-height: 100vh;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+}
+
 nav {
-    display: flex;
+    /*display: flex; */
     /* justify-content: center; */
+    /* align-items: center;
+    background-color: #0d96b4;
+    overflow: hidden;
+    size: auto; */
+    display: flex;
     align-items: center;
     background-color: #0d96b4;
-  }
-  
-  nav a {
+}
+
+.navMenu,
+.header,
+.navbar-logo {
+    /* display: flex; */
+    /*margin-left: 10px;
+    float: left;
+    color: black;
+    text-align: center; */
+
+    padding: 14px 20px;
     display: flex;
     margin-left: 10px;
-  }
+}
 
-  /* previousely max-width: 600px */
-  @media (max-width: 800px) {
+.navMenu {
+    background-color: #0d96b4;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.navMenu:hover {
+    background-color: #41c4e0;
+}
+
+.header {
+    padding-left: -20px;
+    margin-left: -20px;
+}
+
+.navbar-logo {
+    border-radius: 50%;
+}
+
+/* previousely max-width: 600px */
+/* @media (max-width: 800px) { this for the ineractive display
     nav {
-      flex-direction: column;
-      height: auto;
-      padding: 10px;
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
     }
-  
+
     .navbar-logo {
-      position: static;
-      margin-bottom: 10px;
+        position: static;
+        margin-bottom: 10px;
     }
-  
+
     nav {
-      flex-direction: column;
+        flex-direction: column;
     }
-  
+
     nav a {
-      margin: 5px 0;
+        margin: 5px 0;
     }
-  }
-  
+} */

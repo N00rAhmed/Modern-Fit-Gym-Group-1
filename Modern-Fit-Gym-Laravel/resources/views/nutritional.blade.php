@@ -9,14 +9,8 @@
     <title>Nutritional Information</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
-            <h1>Nutritionl Information</h1>
-            <a href="/member">Go back</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </header>
+    @extends('nav')
+    @section('content')
 
     <main>
 
@@ -25,5 +19,6 @@
     <footer>
 
     </footer>
+    @endsection
 </body>
 </html>
