@@ -11,9 +11,9 @@
     <nav>
       <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px"/>
       <h2>Modern FIT Gym Home Page</h2>
-      <a href="./index.html">Home</a>
-      <a href="./login.html">Login</a>
-      <a href="./contact.html">Contact</a>
+      <a href="/">Home</a>
+      <a href="/login">Login</a>
+      <a href="/contact">Contact</a>
     </nav>
   </header>
 

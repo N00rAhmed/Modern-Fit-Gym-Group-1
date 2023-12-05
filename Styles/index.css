@@ -7,21 +7,34 @@ body {
 nav {
   display: flex;
   /* justify-content: center; */
-  align-items: center;
+  /* align-items: center; */
   overflow: hidden;
   background-color: #0d96b4;
 }
 
-.navigation a,
-.navbar-logo {
+.navigation a {
   /*display: flex;
   margin-left: 10px; */
-  float: left;
+  /*float: left; */
   color: black;
-  text-align: center;
   padding: 14px 20px;
+  text-align: center;
   text-decoration: none;
-  border: 0.5;
+  /*border: 0.5;*/
+}
+
+.navbar-logo img {
+  margin: 0px, 0px, 10px;
+}
+
+.navigation a,
+.navbar-logo {
+  float: left;
+}
+
+.navbar-logo {
+  position: static;
+  margin-bottom: 0;
 }
 
 nav a {
@@ -170,7 +183,9 @@ footer p {
   width: 100%;
 }
 
-* {box-sizing:border-box}
+* {
+  box-sizing: border-box;
+}
 
 .slideshow-container {
   max-width: 1000px;
@@ -182,7 +197,8 @@ footer p {
   display: none;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -202,8 +218,9 @@ footer p {
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .text {
@@ -227,7 +244,8 @@ footer p {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -237,6 +255,10 @@ footer p {
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
