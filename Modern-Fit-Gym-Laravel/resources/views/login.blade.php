@@ -37,10 +37,10 @@
       </div>
       <br />
       <div class="button">
-        <a href="./member.html"><button>login</button></a>
+        <a href="/member"><button>login</button></a>
     </div> 
     <div class="button2">
-        <a href="./register.html">Register</a>
+        <a href="/register">Register</a>
       </div>
   </fieldset>
     </main>

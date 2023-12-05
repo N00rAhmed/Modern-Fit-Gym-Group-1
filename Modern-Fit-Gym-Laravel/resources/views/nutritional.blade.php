@@ -13,8 +13,8 @@
         <nav>
             <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
             <h1>Nutritionl Information</h1>
-            <a href="./member.html">Go back</a>
-            <a href="./contact.html">Contact</a>
+            <a href="/member">Go back</a>
+            <a href="/contact">Contact</a>
         </nav>
     </header>
 
