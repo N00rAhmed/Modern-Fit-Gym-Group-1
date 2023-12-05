@@ -73,6 +73,24 @@ class Diary
     }
 
 
+
+    public function CreateData(){
+
+    }
+    public function ReadData(){
+
+    }
+    public function UpdateData(){
+
+    }
+    public function DeleteData(){
+
+    }
+    public function Encryption(){
+
+    }
+
+
 }
 
 
