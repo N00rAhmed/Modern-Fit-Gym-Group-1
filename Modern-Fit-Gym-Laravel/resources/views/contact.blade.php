@@ -7,7 +7,7 @@
     <title>Contact</title>
 </head>
 <body>
-  <header>
+  <!--<header>
     <nav>
       <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px"/>
       <h2>Modern FIT Gym Home Page</h2>
@@ -15,8 +15,9 @@
       <a href="/login">Login</a>
       <a href="/contact">Contact</a>
     </nav>
-  </header>
-
+  </header> -->
+  @extends('nav')
+    @section('content')
   <main>
     <div>
       <h1>Contact Us</h1>
@@ -48,6 +49,8 @@
         </div>
       </fieldset>
     </form>
+    @endsection
+
   </main>
 </body>
 </html>
