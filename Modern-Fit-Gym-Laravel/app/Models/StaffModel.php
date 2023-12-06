@@ -4,7 +4,13 @@
 
 // namespace App;
 
-class Staff
+// extend allows you to inherit from classes
+
+use App\Models\Interfaces\CRUDInterface;
+use App\Models\Interfaces\EncryptionInterface;
+use App\Models\Interfaces\Observer;
+
+class Staff implements CRUDInterface, EncryptionInterface, Observer
 {
     private $StaffID = [7];
     private $FirstName = ["first name"];

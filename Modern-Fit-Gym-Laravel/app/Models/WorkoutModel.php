@@ -7,8 +7,14 @@
 <?php
 
 // namespace App;
+// namespace App\Models;
 
-class Workout
+// use Illuminate\Database\Eloquent\Model;
+use App\Models\Interfaces\CRUDInterface;
+use App\Models\Interfaces\EncryptionInterface;
+use App\Models\Interfaces\Subject;
+
+class Workout implements CRUDInterface, EncryptionInterface, Subject
 {
     private $WorkoutID = [2];
     private $StaffID = 4;
