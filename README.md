@@ -133,6 +133,9 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 #### Troubleshooting
 A common error that some of our team mates had was installation problems. Once you have done that go into your XAMPP folder and find the php and php.ini-production files, open them and remove the `;` from `;extension=zip`. This may not be necesarry to do but in the beginning we faced errors regarding installation like this one which is why I have mentioned it.
+
+<br />
+
 ![Alt text](image-1.png)
 
 #### Run Application
