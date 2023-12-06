@@ -63,8 +63,8 @@ h1 {
     box-sizing: border-box;
 }
 
-.button,
-.button2 {
+.loginbttn,
+.regbttn {
     display: grid;
     text-align: center;
     grid-template-columns: 1fr;
@@ -73,25 +73,28 @@ h1 {
     margin: 20px auto;
 }
 
-.button a,
-.button2 a {
+.regbttn a {
     text-decoration: none;
-    color: #007bff;
+    color: #0d96b4;
 }
 
-.button button {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+.loginbttn button {
+    padding: 8px 22px;
+    font-size: medium;
+}
+
+.loginbttn button {
+    background-color: #0d96b4;
+    color: black;
     border: none;
     cursor: pointer;
 }
 
-.button button:hover {
-    background-color: #0056b3;
+.loginbttn button:hover {
+    background-color: darkgray;
 }
 
-.button2 a:hover {
+.regbttn a:hover {
     text-decoration: underline;
 }
 

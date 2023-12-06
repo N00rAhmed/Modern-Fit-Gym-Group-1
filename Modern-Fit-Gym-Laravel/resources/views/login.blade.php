@@ -31,15 +31,15 @@
   </div>
   <fieldset>
       <div class="input">
-        <input type="text" placeholder="username PIN" />
+        <input type="text" placeholder="Username PIN" />
       <br />
         <input type="text" placeholder="USER CREATED password" />
       </div>
       <br />
-      <div class="button">
-        <a href="/member"><button>login</button></a>
+      <div class="loginbttn">
+        <a href="/member"><button>Login</button></a>
     </div> 
-    <div class="button2">
+    <div class="regbttn">
         <a href="/register">Register</a>
       </div>
   </fieldset>
