@@ -7,7 +7,7 @@
 - [Project Objectives](#project-objectives)
 - [Tech Stack](#tech-stack)
 - [Git Commands](##git-commands-for-making-changes-and-pushing-them-to-your-forked-repo)
-- [Setup Developer Environment](#tech-stack)
+- [Setup Developer Environment](#setup-developer-environment)
 
 
 <hr />
