@@ -40,17 +40,66 @@
         </div>
         
         <div class="facility">
-            <h2><strong>Facilities</strong></h2>
-            </p>
+        <h2><strong>Facilities</strong></h2>
+     <p>Where cutting-edge meets fitness excellence. Our facility is meticulously designed to offer a contemporary and invigorating fitness experience, featuring:</p>
+
+     <div id="mz-gallery" class="clearfix">
+        <div id="mz-gallery">
+            <div class="gallery">
+                <a target="_blank" href="img_5terre.jpg">
+                    <img src="{{ asset('../Images/Slide1.jpg' ) }}" alt="Cinque Terre" width="600" height="400">
+                </a>
+                <div class="desc">Add a description of the image here</div>
+            </div>
+
+            <div class="gallery">
+                        <a target="_blank" href="img_forest.jpg">
+                            <img src="{{ asset('../Images/Slide2.jpg' ) }}" alt="Forest" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+            </div>
+
+            <div class="gallery">
+                        <a target="_blank" href="img_lights.jpg">
+                            <img src="{{ asset('../Images/Slide3.jpg' ) }}" alt="Northern Lights" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+            </div>
+
+            <div class="gallery">
+                        <a target="_blank" href="img_mountains.jpg">
+                            <img src="{{ asset('../Images/Slide4.jpg' ) }}" alt="Mountains" width="600" height="400">
+                        </a>
+                        <div class="desc">Add a description of the image here</div>
+            </div>
         </div>
-        <div class="policy">
-            <h2><strong>Policy</strong></h2>
-            </p>
-        </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima animi sit fuga culpa tenetur praesentium sapiente nihil esse in placeat atque tempore magni aliquam, consectetur commodi nostrum fugiat nobis officia? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit voluptas tenetur a amet repellendus! Qui, commodi. Ut nam molestiae animi libero! Repellat harum aut facilis ullam, explicabo quaerat? Natus, maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam itaque nihil debitis autem quis maxime laudantium? Ex at dolorem deserunt voluptates placeat numquam magni hic eligendi nemo, tenetur expedita quis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero omnis exercitationem commodi laborum, sit labore quibusdam, iusto recusandae aperiam cupiditate similique minus fuga delectus. Sint ut error totam reiciendis! Doloribus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quaerat laudantium inventore a rem natus molestiae tempore delectus cumque architecto fugit vitae debitis similique ducimus consequuntur, deleniti nobis odit ullam!
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime officia tenetur nesciunt, tempora non illo esse cum numquam molestiae ab recusandae repudiandae id atque! Provident unde itaque alias natus id.
+
+     </div>
+
+     <div class="policy">
+     <h2><strong>Our Policy</strong></h2>
+        
+        <p>
+            <strong>1. Membership:</strong>
+            <br>
+            1.1 Registration: All members must complete the registration process and provide accurate and up-to-date personal information.
+            <br>
+            1.2 Age Requirement: Members must be at least 16 years old. Minors aged 16-17 require parental or guardian consent.
         </p>
+
+        <p>
+            <strong>2. Facility Use:</strong>
+            <br>
+            2.1 Hours of Operation: Our gym is open seven days a week from 6:00 AM to 10:00 PM. Any changes to operating hours will be communicated in advance.
+            <br>
+            2.2 Attire: Proper workout attire, including athletic shoes, is required at all times. Please refrain from wearing offensive or inappropriate clothing.
+        </p>
+     </div>
     </main>
+
+
+</main>
+
 
     <footer>
         <p>&copy; 2023 Modern Fit Gym. All rights reserved.</p>
