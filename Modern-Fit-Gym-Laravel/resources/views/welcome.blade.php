@@ -35,7 +35,7 @@
                 <h2><strong>Register</strong></h2>
                 <p>Register with us if you havent yet! Monthly memberships which contain your own trainer to assist your journey, through nutritional and physcial advice. They will be able to give personalised regimes just for your goals, and you will be able to keep track of your progress with our easy to use website.
                 </p>
-                <a href="register.html"><button id="register">Register</button></a>
+                <a href="/register"><button id="register">Register</button></a>
             </div>
         </div>
         
@@ -103,7 +103,7 @@
 
     <footer>
         <p>&copy; 2023 Modern Fit Gym. All rights reserved.</p>
-        <a href="./contact.html">Contact Us</a>
+        <a href="/contact">Contact Us</a>
     </footer>
     @endsection
 

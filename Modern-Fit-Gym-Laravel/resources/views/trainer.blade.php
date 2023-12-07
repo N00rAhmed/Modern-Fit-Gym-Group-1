@@ -13,9 +13,9 @@
         <nav>
             <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
             <h2>Modern FIT Gym Trainer Page</h2>
-            <a href="./trainer.html">Trainer Home</a>
-            <a href="./viewDiary.html">View Diary</a>
-            <a href="./regime.html">Regime (crud functionality)</a>
+            <a href="/trainer">Trainer Home</a>
+            <a href="/viewDiary">View Diary</a>
+            <a href="/regime">Regime (crud functionality)</a>
         </nav>
     </header>
 

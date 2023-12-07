@@ -7,21 +7,34 @@ body {
 nav {
   display: flex;
   /* justify-content: center; */
-  align-items: center;
+  /* align-items: center; */
   overflow: hidden;
   background-color: #0d96b4;
 }
 
-.navigation a,
-.navbar-logo {
+.navigation a {
   /*display: flex;
   margin-left: 10px; */
-  float: left;
+  /*float: left; */
   color: black;
-  text-align: center;
   padding: 14px 20px;
+  text-align: center;
   text-decoration: none;
-  border: 0.5;
+  /*border: 0.5;*/
+}
+
+.navbar-logo img {
+  margin: 0px, 0px, 10px;
+}
+
+.navigation a,
+.navbar-logo {
+  float: left;
+}
+
+.navbar-logo {
+  position: static;
+  margin-bottom: 0;
 }
 
 nav a {
@@ -167,7 +180,13 @@ footer p {
 }
 
 
+<<<<<<< HEAD
 
+=======
+* {
+  box-sizing: border-box;
+}
+>>>>>>> fa668635247c3158237a7fb7c7c230301d8c40fc
 
 .slideshow-container {
   position: relative;
@@ -179,6 +198,7 @@ footer p {
   display: none;
 }
 
+<<<<<<< HEAD
 .slide-content {
   display: flex;
   align-items: center; /* Vertically center the content */
@@ -187,6 +207,32 @@ footer p {
 .slide-image {
   width: 50%;
   border-radius: 8px;
+=======
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+>>>>>>> fa668635247c3158237a7fb7c7c230301d8c40fc
 }
 
 .text {

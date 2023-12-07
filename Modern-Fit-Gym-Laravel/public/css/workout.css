@@ -1,26 +1,46 @@
-nav{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    /* background-color: aqua; */
-    background-color: #087891;
+body {
+    min-height: 100vh;
+    margin: 0px;
 }
 
-nav a{
-    display: flex;
-    margin-left: 10px;
-}
-
-main{
+main {
     width: 90%;
     margin: auto;
-  }
-  
-  main h1{
+}
+
+main h1 {
     text-align: center;
-  }
-  
-  main p{
+}
+
+main p {
     text-align: center;
-  }
-  
+}
+
+
+.table-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    gap: 20px; /* Optional gap between tables */
+    flex-wrap: wrap; /* Wrap to the next line if container is not wide enough */
+}
+
+.table-with-search {
+    width: calc(33.33% - 20px); /* Occupy approximately one-third of the container */
+    margin-bottom: 20px; /* Optional margin between tables */
+}
+
+.search-container {
+    margin-bottom: 10px; /* Optional margin for the search bar */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px; /* Optional margin for tables */
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}

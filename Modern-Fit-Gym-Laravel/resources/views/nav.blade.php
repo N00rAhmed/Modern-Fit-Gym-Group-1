@@ -6,18 +6,22 @@
     <title>Your App</title>
     <!-- Include your CSS, JavaScript, and other head elements here -->
     <link rel="stylesheet" href="{{ asset('../css/nav.css') }}">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto">
 
 </head>
 <body>
 <header>
         <nav>
             <!-- <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" /> -->
-            <img class="navbar-logo" src="{{ asset('Images/logo.png') }}" height="100px" width="100px" />
+            <a href="/"><img class="navbar-logo" src="{{ asset('Images/Image2.png') }}" height="100px" width="100px"/></a>
 
-            <h2>Modern FIT Gym Home Page</h2>
-            <a href="/">Home</a>
-            <a href="/login">Login</a>
-            <a href="/contact">Contact</a>
+            <h2 class="header">Modern Fit Gym</h2>
+            
+            <a href="/" class="navMenu">Home</a>
+            <a href="/nutritional" class="navMenu">Nutritional</a>
+            <a href="/login" class="navMenu">Login</a>
+            <a href="/contact" class="navMenu">Contact</a>
         </nav>
     </header>
 

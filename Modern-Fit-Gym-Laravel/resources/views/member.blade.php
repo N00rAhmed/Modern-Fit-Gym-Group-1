@@ -14,9 +14,9 @@
         <nav>
             <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
             <h2>ModernFit Gym Member Page</h2>
-            <a href="./index.html">Home</a>
-            <a href="./login.html">Login</a>
-            <a href="./contact.html">Contact</a>
+            <a href="/index">Home</a>
+            <a href="/login">Login</a>
+            <a href="/contact">Contact</a>
         </nav>
     </header>
     
@@ -24,14 +24,13 @@
         <h1>Welcome Member</h1>
         <div class="cards">
 
-            <div class="card1"><a href="./diary.html">Go to My diary</a></div> 
-            <br/>
+            <div class="card1"><a href="/diary">Go to My diary</a></div> 
 
-            <div class="card3"><a href="./workout.html">View My Workout plan</a></div>
+            <div class="card3"><a href="/workout">View My Workout plan</a></div>
             
-            <div class="card2"><a href="./nutritional.html">Nutritional Information</a></div>
+            <div class="card2"><a href="/nutritional">Nutritional Information</a></div>
 
-            <div class="card4"><a href="./plan.html">View my Nutritional Plan</a></div>
+            <div class="card4"><a href="/plan">View my Nutritional Plan</a></div>
             
         </div>
 
