@@ -64,6 +64,32 @@ h1 {
     margin-bottom: 10px;
 }
 
+.regbttn {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 200px;
+    margin: 20px auto;
+}
+
+.regbttn button {
+    padding: 8px 22px;
+    font-size: medium;
+}
+
+.regbttn button {
+    background-color: #0d96b4;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.regbttn button:hover {
+    background-color: darkgray;
+}
+
+/*
 .button {
     display: grid;
     text-align: center;
@@ -88,9 +114,10 @@ h1 {
 .button button:hover {
     background-color: white;
     color: Black;
-}
+} */
 
 fieldset {
     width: 80%;
     margin: auto;
+    margin-bottom: 100px;
 }

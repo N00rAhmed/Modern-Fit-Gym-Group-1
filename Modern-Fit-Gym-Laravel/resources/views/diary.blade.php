@@ -9,14 +9,8 @@
     <title>My diary</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
-            <h1>My Diary</h1>
-            <a href="/member">Go back</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </header>
+@extends('nav')
+    @section('content')
 
     <main>
         <h2>Diary Entry</h2>
@@ -38,5 +32,6 @@
     <footer>
 
     </footer>
+    @endsection 
 </body>
 </html>
