@@ -9,21 +9,63 @@
     <title>Exercise Plan</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
-            <h1>View Exercise Plan</h1>
-            <a href="/member">Go back</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </header>
+    @extends('nav')
+    @section('content')
 
     <main>
+    <div class="table-container">
+        <div class="table-with-search">
+            <table class="Form">
+                <caption>Form</caption>
+                <tr>
 
+            </table>
+        </div>
+
+        <div class="table-with-search">
+            <table class="table">
+                <caption>Table 2</caption>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </div>
+
+        <div class="table-with-search">
+            <div class="search-container">
+                <input type="text" id="searchBar" name="searchBar" placeholder="Search Table 3">
+            </div>
+            <table class="table">
+                <caption>Table 3</caption>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </div>
+    </div>
+    </div>
     </main>
 
     <footer>
 
+
+    @endsection
     </footer>
 </body>
 </html>

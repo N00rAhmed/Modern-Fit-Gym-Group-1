@@ -18,7 +18,6 @@
         <div class="cards">
 
             <div class="card1"><a href="/diary">Go to My diary</a></div> 
-            <br/>
 
             <div class="card3"><a href="/workout">View My Workout plan</a></div>
             
