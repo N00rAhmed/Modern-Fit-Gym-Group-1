@@ -3,8 +3,11 @@
 <?php
 
 // namespace App;
+use App\Models\Interfaces\CRUDInterface;
+use App\Models\Interfaces\EncryptionInterface;
+use App\Models\Interfaces\Observer;
 
-class Member
+class Member implements CRUDInterface, EncryptionInterface, Observer
 {
     private $MemberID = [6];
     private $FirstName = ["first name"];

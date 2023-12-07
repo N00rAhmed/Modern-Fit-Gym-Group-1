@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Diary
+class Diary extends SearchFunction
 {
     private $MemberID = 1;
     private $DiaryID = 1;

@@ -5,10 +5,10 @@
 
 
 <?php
+use App\Models\Interfaces\CRUDInterface;
+use App\Models\Interfaces\EncryptionInterface;
 
-// namespace App;
-
-class Diary
+class Diary implements CRUDInterface, EncryptionInterface
 {
     private $DiaryID = [6];
     private $MemberID = 5;

@@ -2,7 +2,9 @@
 
 namespace App;
 
-class Workout
+use App\Controllers\SearchFunction;
+
+class Workout extends SearchFunction
 {
     private $WorkoutID = 2;
     private $StaffID = 3;
