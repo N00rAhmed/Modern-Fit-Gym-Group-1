@@ -33,3 +33,30 @@ main form input {
 main form textarea {
     font-size: 1.05rem;
 }
+
+.sendbttn {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 200px;
+    margin: 20px auto;
+
+    padding: 8px 22px;
+    font-size: medium;
+
+    background-color: #0d96b4;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.sendbttn:hover {
+    background-color: darkgray;
+}
+
+fieldset {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 100px;
+}

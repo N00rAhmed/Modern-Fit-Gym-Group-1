@@ -54,7 +54,7 @@
          
       </div>
       <br />
-      <div class="button">
+      <div class="regbttn">
         <button type="submit">Register</button>
 
       </div>
