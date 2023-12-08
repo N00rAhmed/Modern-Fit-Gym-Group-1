@@ -1,15 +1,7 @@
-<!-- implement attributes similar to how u did for workout controllers  -->
-<!-- do the get and set functions -->
-<!-- use arryays where it says arrays in the model on class diagram -->
-<!-- keep function creat data etc empty -->
-
-
 <?php
-
+namespace App\Models\DiaryModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
-
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
 
@@ -17,9 +9,11 @@ use App\Models\Interfaces\EncryptionInterface;
 class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
 // class Diary extends Model
 {
+    use HasFactory;
+
+
     protected $table = 'Diary'; // Assuming 'diaries' is the table name
 
-    use HasFactory;
 
     // private $DiaryID = [6];
     // private $MemberID = 5;
@@ -126,6 +120,13 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
 
 
 }
+
+
+
+// <!-- implement attributes similar to how u did for workout controllers  -->
+// <!-- do the get and set functions -->
+// <!-- use arryays where it says arrays in the model on class diagram -->
+// <!-- keep function creat data etc empty -->
 
 
 

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\DiaryModel; // Adjust the namespace as per your project structure
 
-class DiaryController extends SearchFunction
+use App\Models\DiaryModel;
+
+
+class DiaryController extends Controller
 {
+    
     private $MemberID = 1;
     private $DiaryID = 1;
     private $Date = 25/12/2024;
@@ -17,8 +20,7 @@ class DiaryController extends SearchFunction
     private $Notes = "notes user written";
 
     public function showDiary(){
-        $diaryModel = new DiaryModel(); // Instantiate DiaryModel, not Diary
-        $diaryData = $diaryModel->ReadData();
+        DiaryModel::all();
         return view('diary', ['diaryData' => $diaryData]);
     }
 
