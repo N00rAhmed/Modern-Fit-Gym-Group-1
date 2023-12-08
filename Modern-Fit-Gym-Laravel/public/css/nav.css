@@ -52,8 +52,14 @@ nav {
     border-radius: 50%;
 }
 
+@media (max-width: 700px) {
+    .header {
+        display: none;
+    }
+}
+
 /* previousely max-width: 600px */
-/* @media (max-width: 800px) { this for the ineractive display
+/*@media (max-width: 800px) { this for the ineractive display
     nav {
         flex-direction: column;
         height: auto;
@@ -73,3 +79,4 @@ nav {
         margin: 5px 0;
     }
 } */
+
