@@ -45,12 +45,12 @@
         </div>
         <br>
         <div>
-          <button type="submit">Send</button>
+          <button class="sendbttn" type="submit" >Send</button>
         </div>
       </fieldset>
     </form>
-    @endsection
-
+   
   </main>
+  @endsection 
 </body>
 </html>

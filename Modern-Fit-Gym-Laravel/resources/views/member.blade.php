@@ -10,22 +10,14 @@
     <title>Member Page</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
-            <h2>ModernFit Gym Member Page</h2>
-            <a href="/">Home</a>
-            <a href="/login">Login</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </header>
+@extends('nav')
+    @section('content')
     
     <main>
         <h1>Welcome Member</h1>
         <div class="cards">
 
             <div class="card1"><a href="/diary">Go to My diary</a></div> 
-            <br/>
 
             <div class="card3"><a href="/workout">View My Workout plan</a></div>
             
@@ -54,5 +46,6 @@
     <footer>
 
     </footer>
+    @endsection 
 </body>
 </html>
