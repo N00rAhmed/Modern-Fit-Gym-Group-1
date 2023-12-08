@@ -15,18 +15,29 @@
     <main>
         <h2>Diary Entry</h2>
         <div class="input">
-        <input type="text" placeholder="Date" />
-        <input type="text" placeholder="Calorie Intake"/>
-        <input type="text" placeholder="Supplement Intake"/>
-        <input type="text" placeholder="Exercise Duration"/>
-        <input type="text" placeholder="Calorie Intake"/>
-        <input type="text" placeholder="Daily Duration"/>
-        <input type="text" placeholder="Notes"/>
+            <!-- <form action="/save-diary" method="post"> -->
+
+                <input type="text" name="date" placeholder="Date" />
+                <input type="text" name="CalorieIntake" placeholder="Calorie Intake"/>
+                <input type="text" name="SupplementIntake" placeholder="Supplement Intake"/>
+                <input type="text" name="Excercise" placeholder="Exercise"/>
+                <input type="text" name="CalorieIntake" placeholder="Calorie Intake"/>
+                <input type="text" name="DailyDuration" placeholder="Daily Duration"/>
+                <input type="text" name="Notes" placeholder="Notes"/>
         </div>
         <br />
         <div class="buttons">
-        <button>Add</button>
+            <button type="submit">Add</button>
+            <!-- </form> -->
+
         </div>
+        @foreach($diaryData as $entry)
+            <p>Date: {{ $entry->Date }}</p>
+            <p>Calorie Intake: {{ $entry->CalorieIntake }}</p>
+            <!-- Display other fields similarly -->
+        @endforeach
+
+
     </main>
 
     <footer>

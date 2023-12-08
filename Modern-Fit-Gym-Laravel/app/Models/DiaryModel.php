@@ -5,79 +5,113 @@
 
 
 <?php
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
 
-class Diary implements CRUDInterface, EncryptionInterface
+
+class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
+// class Diary extends Model
 {
-    private $DiaryID = [6];
-    private $MemberID = 5;
-    private $Date = [4/12/2023];
-    private $CalorieIntake = [32];
-    private $SupplementIntake = "supplement intake";
-    private $Excercise = ["excercise"];
-    private $DailyDuration = [9];
-    private $Notes = ["notes string array"];
+    protected $table = 'Diary'; // Assuming 'diaries' is the table name
+
+    use HasFactory;
+
+    // private $DiaryID = [6];
+    // private $MemberID = 5;
+    // private $Date = [4/12/2023];
+    // private $CalorieIntake = [32];
+    // private $SupplementIntake = "supplement intake";
+    // private $Excercise = ["excercise"];
+    // private $DailyDuration = [9];
+    // private $Notes = ["notes string array"];
+
+    protected $fillable = [
+        'MemberID',
+        'Date',
+        'CalorieIntake',
+        'SupplementIntake',
+        'Exercise',
+        'DailyDuration',
+        'Notes'
+    ];
+
+    // Define the attributes
+    protected $MemberID;
+    protected $Date;
+    protected $CalorieIntake;
+    protected $SupplementIntake;
+    protected $Exercise;
+    protected $DailyDuration;
+    protected $Notes;
 
 
+
+
+    // Getter methods
     public function getDiaryID(){
-        return $DiaryID;
+        return $this->DiaryID;
     }
     public function getMemberID(){
-        return $MemberID;
+        return $this->MemberID;
     }
     public function getDate(){
-        return $Date;
+        return $this->Date;
     }
     public function getCalorieIntake(){
-        return $CalorieIntake;
+        return $this->CalorieIntake;
     }
     public function getSupplementIntake(){
-        return $SupplementIntake;
+        return $this->SupplementIntake;
     }
-    public function getExcercise(){
-        return $Excercise;
+    public function getExercise(){
+        return $this->Exercise;
     }
     public function getDailyDuration(){
-        return $DailyDuration;
+        return $this->DailyDuration;
     }
     public function getNotes(){
-        return $Notes;
+        return $this->Notes;
     }
 
-
-
+    // Setter methods
     public function setDiaryID($diary_id){
-        $DiaryID = $diary_id;
+        $this->DiaryID = $diary_id;
     }
     public function setMemberID($member_id){
-        $MemberID = $member_id;
+        $this->MemberID = $member_id;
     }
     public function setDate($date){
-        $Date = $date;
+        $this->Date = $date;
     }
     public function setCalorieIntake($calorie_intake){
-        $CalorieIntake = $calorie_intake;
+        $this->CalorieIntake = $calorie_intake;
     }
     public function setSupplementIntake($supplement_intake){
-        $SupplementIntake = $supplement_intake;
+        $this->SupplementIntake = $supplement_intake;
     }
-    public function setExcercise($excercise){
-        $Excercise = $excercise;
+    public function setExercise($exercise){
+        $this->Exercise = $exercise;
     }
     public function setDailyDuration($daily_duration){
-        $DailyDuration = $daily_duration;
+        $this->DailyDuration = $daily_duration;
     }
     public function setNotes($notes){
-        $Notes = $notes;
+        $this->Notes = $notes;
     }
+
 
 
 
     public function CreateData(){
-
+        // $databaseConnection = DB::connection('sqlite');
     }
     public function ReadData(){
+        return Diary::all();
 
     }
     public function UpdateData(){

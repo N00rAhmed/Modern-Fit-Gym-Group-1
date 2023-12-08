@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Interfaces;
+
 interface CRUDInterface {
     public function CreateData();
     public function ReadData();
