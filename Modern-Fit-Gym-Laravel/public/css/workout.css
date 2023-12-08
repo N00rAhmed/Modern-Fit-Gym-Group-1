@@ -17,30 +17,71 @@ main p {
 }
 
 
+/* Container for tables */
 .table-container {
     display: flex;
-    justify-content: space-between; /* Adjust as needed */
-    gap: 20px; /* Optional gap between tables */
-    flex-wrap: wrap; /* Wrap to the next line if container is not wide enough */
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
+/* Styling for tables with search */
 .table-with-search {
-    width: calc(33.33% - 20px); /* Occupy approximately one-third of the container */
-    margin-bottom: 20px; /* Optional margin between tables */
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
 }
 
+/* Styling for search container */
 .search-container {
-    margin-bottom: 10px; /* Optional margin for the search bar */
+    margin-bottom: 10px;
 }
 
+/* Styling for tables */
 .table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 10px; /* Optional margin for tables */
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional box shadow for tables */
+    border-radius: 8px; /* Optional border radius for tables */
 }
 
+/* Styling for table headers and cells */
 .table th, .table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     text-align: left;
+}
+
+/* Background color for table headers */
+.table th {
+    background-color: #f2f2f2; /* Optional background color for headers */
+}
+
+/* Hover effect for table rows */
+.table tbody tr:hover {
+    background-color: #f5f5f5; /* Optional hover background color */
+}
+
+/* Styling for search input */
+.search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Button styling (optional) */
+.button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
 }
