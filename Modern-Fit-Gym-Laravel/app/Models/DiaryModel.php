@@ -1,5 +1,6 @@
 <?php
-namespace App\Models\DiaryModel;
+
+namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Interfaces\CRUDInterface;
@@ -12,7 +13,6 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
     use HasFactory;
 
 
-    protected $table = 'Diary'; // Assuming 'diaries' is the table name
 
 
     // private $DiaryID = [6];
@@ -105,8 +105,12 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
         // $databaseConnection = DB::connection('sqlite');
     }
     public function ReadData(){
-        return Diary::all();
-
+        // return Diary::all();
+        // $table = "Diary";
+        // $fillable = ["Member_ID", "Date", "Calorie_Intake", "Supplement_Intake", "Exercise", "Daily_Duration", "Notes"];
+        // $primaryKey = "Diary_ID";
+        // $timestamps = false;
+        return DiaryModel::select('select * from Diary');
     }
     public function UpdateData(){
 

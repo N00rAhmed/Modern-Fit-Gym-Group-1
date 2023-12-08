@@ -20,10 +20,11 @@ class DiaryController extends Controller
     private $Notes = "notes user written";
 
     public function showDiary(){
-        DiaryModel::all();
-        return view('diary', ['diaryData' => $diaryData]);
+        $diaryData = new DiaryModel();
+        $data = $diaryData->ReadData();
+        return view('diary', array("Data"=>$data));
     }
-
+// shift f9 for brakpints
 
     // Getter methods
     public function getMemberID()

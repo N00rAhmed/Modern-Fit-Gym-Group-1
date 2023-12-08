@@ -31,11 +31,10 @@
             <!-- </form> -->
 
         </div>
-        @foreach($diaryData as $entry)
-            <p>Date: {{ $entry->Date }}</p>
-            <p>Calorie Intake: {{ $entry->CalorieIntake }}</p>
-            <!-- Display other fields similarly -->
-        @endforeach
+
+        @foreach ($Data as $data)
+    {{ $data -> Date}}
+@endforeach
 
 
     </main>
