@@ -29,20 +29,24 @@
   <div class="subtitle">
       <h1>Login</h1>
   </div>
-  <fieldset>
-      <div class="input">
-        <input type="text" placeholder="Username PIN" />
+
+  <form action="" method="post">
+      <fieldset>
+    <div class="input">
+      <input type="number" placeholder="PIN" />
       <br />
-        <input type="text" placeholder="USER CREATED password" />
-      </div>
-      <br />
-      <div class="loginbttn">
-        <a href="/member"><button>Login</button></a>
-    </div> 
+      <input type="password" placeholder="USER CREATED password" />
+    </div>
+    <br />
+    <div class="loginbttn">
+      <button type="submit">Login</button>
+    </div>
     <div class="regbttn">
-        <a href="/register">Register</a>
-      </div>
+      <a href="/register">Register</a>
+    </div>
   </fieldset>
+  </form>
+
     </main>
 
     <footer>

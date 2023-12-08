@@ -124,6 +124,10 @@ footer p {
     margin-right: 25px;
 }
 
+.facil p{
+    text-align: left;
+}
+
 div.gallery {
   margin: 5px;
   border: 1px solid #ccc;
@@ -150,4 +154,15 @@ div.desc {
   display: table;
   clear: both;
 }
+
+.Rules {
+    text-align: right;
+  }
+  
+  .Rules p {
+    text-align: left;
+  }
+  
+  
+  
 

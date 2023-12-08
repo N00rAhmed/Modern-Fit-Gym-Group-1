@@ -18,7 +18,8 @@
             <table class="Form">
                 <caption>Form</caption>
                 <tr>
-
+                    <th>Header</th>
+                </tr>
             </table>
         </div>
 
