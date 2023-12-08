@@ -1,8 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Http\Controllers;
 
-class Diary extends SearchFunction
+use Illuminate\Http\Request;
+use App\Models\DiaryModel; // Adjust the namespace as per your project structure
+
+class DiaryController extends SearchFunction
 {
     private $MemberID = 1;
     private $DiaryID = 1;
@@ -13,67 +16,85 @@ class Diary extends SearchFunction
     private $DailyDuration = 32;
     private $Notes = "notes user written";
 
+    public function showDiary(){
+        $diaryModel = new DiaryModel(); // Instantiate DiaryModel, not Diary
+        $diaryData = $diaryModel->ReadData();
+        return view('diary', ['diaryData' => $diaryData]);
+    }
 
+
+    // Getter methods
     public function getMemberID()
     {
-        return $memberID;
+        return $this->MemberID;
     }
 
     public function getDiaryID()
     {
-        return $DiaryID;
+        return $this->DiaryID;
     }
+
     public function getDate()
     {
-        return $Date;
+        return $this->Date;
     }
+
     public function getCalorieIntake()
     {
-        return $CalorieIntake;
+        return $this->CalorieIntake;
     }
+
     public function getSupplementIntake()
     {
-        return $SupplementIntake;
+        return $this->SupplementIntake;
     }
-    public function getExcercise()
+
+    public function getExercise()
     {
-        return $Excercise;
+        return $this->Exercise;
     }
+
     public function getDailyDuration()
     {
-        return $DailyDuration;
+        return $this->DailyDuration;
     }
+
     public function getNotes()
     {
-        return $Notes;
+        return $this->Notes;
     }
 
-
-
-
+    // Setter methods
     public function setMemberID($member_id){
-        $MemberID = $member_id;
+        $this->MemberID = $member_id;
     }
+
     public function setDiaryID($diary_id){
-        $DiaryID = $diary_id;
+        $this->DiaryID = $diary_id;
     }
+
     public function setDate($date){
-        $Date = $date;
+        $this->Date = $date;
     }
+
     public function setCalorieIntake($calorie_intake){
-        $CalorieIntake = $calorie_intake;
+        $this->CalorieIntake = $calorie_intake;
     }
+
     public function setSupplementIntake($supplement_intake){
-        $SupplementIntake = $supplement_intake;
+        $this->SupplementIntake = $supplement_intake;
     }
-    public function setExcercise($excercise){
-        $Excercise = $excercise;
+
+    public function setExercise($exercise){
+        $this->Exercise = $exercise;
     }
+
     public function setDailyDuration($daily_duration){
-        $DailyDuration = $daily_duration;
+        $this->DailyDuration = $daily_duration;
     }
+
     public function setNotes($notes){
-        $Notes = $notes;
+        $this->Notes = $notes;
     }
 
 
@@ -82,6 +103,8 @@ class Diary extends SearchFunction
 
     }
 
+    // Model functionality and then instantiated in controller
+// route woud route to controller
     
 
 }

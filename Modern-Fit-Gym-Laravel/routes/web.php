@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\DiaryController;
+use App\Http\Models\DiaryModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +30,16 @@ Route::get('/admin', [RegistrationController::class, 'index']);
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/diary', function () {
-    return view('diary');
-});
+
+// Route::get('/diary', function () {
+//     return view('diary');
+// });
+Route::get('/diary', [DiaryController::class, 'showDiary']);
+
+// Route::get('/diary', [DiaryController::class, 'index']); // Display form to add a diary entry
+
+
+
 Route::get('/login', function () {
     return view('login');
 });
