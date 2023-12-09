@@ -1,11 +1,10 @@
-
-
 <?php
 
-// namespace App;
-
-// extend allows you to inherit from classes
-
+namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
 use App\Models\Interfaces\Observer;
@@ -21,6 +20,7 @@ class Staff implements CRUDInterface, EncryptionInterface, Observer
     private $Email = ["tronn@gmail.com"];
     private $PIN = [911];
     private $Role = ["role"];
+    private $Columns = "placeholder";
 
 
     public function getStaffID(){
@@ -49,6 +49,9 @@ class Staff implements CRUDInterface, EncryptionInterface, Observer
     }
     public function getRole(){
         return $Role;
+    }
+    public function getColumns(){
+        return $this->Columns;
     }
 
 
@@ -79,14 +82,17 @@ class Staff implements CRUDInterface, EncryptionInterface, Observer
     public function setRole($role){
         $Role = $role;
     }
-
+    public function setColumns($Columns){
+        $this->Columns = $Columns;
+    }
 
 
     public function CreateData(){
 
     }
     public function ReadData(){
-
+        $data = DB::select('select ' + $Columns + ' from Staff');
+        return $data;
     }
     public function UpdateData(){
 

@@ -30,10 +30,11 @@
       <h1>Login</h1>
   </div>
 
-  <form action="" method="post">
+  <form action="{{ route('login.submit') }}" method="post">
+  @csrf
       <fieldset>
     <div class="input">
-      <input type="number" placeholder="PIN" />
+      <input type="pin" placeholder="PIN" />
       <br />
       <input type="password" placeholder="USER CREATED password" />
     </div>
@@ -46,7 +47,7 @@
     </div>
   </fieldset>
   </form>
-
+    
     </main>
 
     <footer>

@@ -1,14 +1,18 @@
-
-
 <?php
 
-// namespace App;
+namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
 use App\Models\Interfaces\Observer;
 
-class Member implements CRUDInterface, EncryptionInterface, Observer
+class MemberModel implements CRUDInterface, EncryptionInterface, Observer
 {
+    use HasFactory;
+
     private $MemberID = [6];
     private $FirstName = ["first name"];
     private $LastName = ["last name"];
@@ -18,6 +22,7 @@ class Member implements CRUDInterface, EncryptionInterface, Observer
     private $Email = ["tronn@gmail.com"];
     private $CreditDetails = ["283223092990"];
     private $Pin = [911];
+    private $Columns = "placeholder";
 
 
     public function getMemberID(){
@@ -46,6 +51,9 @@ class Member implements CRUDInterface, EncryptionInterface, Observer
     }
     public function getPin(){
         return $Pin;
+    }
+    public function getColumns(){
+        return $this->Columns;
     }
 
 
@@ -76,6 +84,9 @@ class Member implements CRUDInterface, EncryptionInterface, Observer
     public function setPin($pin){
         $Pin = $pin;
     }
+    public function setColumns($Columns){
+        $this->Columns = $Columns;
+    }
 
 
 
@@ -83,7 +94,8 @@ class Member implements CRUDInterface, EncryptionInterface, Observer
 
     }
     public function ReadData(){
-
+        $data = DB::select('select ' + $Columns + ' from Members');
+        return $data;
     }
     public function UpdateData(){
 
