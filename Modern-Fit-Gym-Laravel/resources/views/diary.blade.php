@@ -38,14 +38,15 @@ tr:nth-child(even) {
     <main>
         <h2>Diary Entry</h2>
         <div class="input">
-            <form action="/create_data" method="post">
+            <form action="{{ route('diary.submit') }}" method="post">
+            @csrf <!-- {{ csrf_field() }} -->
 
-                <input type="text" name="Date" id="Date" placeholder="Date" />
-                <input type="text" name="Calorie_Intake" id="Calorie_Intake" placeholder="Calorie Intake"/>
-                <input type="text" name="Supplement_Intake" id="Supplement_Intake" placeholder="Supplement Intake"/>
-                <input type="text" name="Excercise" id="Excercise" placeholder="Exercise"/>
-                <input type="text" name="Daily_Duration" id="Daily_Duration" placeholder="Daily Duration"/>
-                <input type="text" name="Notes" id="Notes" placeholder="Notes"/>
+                <input type="text" name="date" id="date" placeholder="Date" />
+                <input type="text" name="calorie_intake" id="calorie_intake" placeholder="Calorie Intake"/>
+                <input type="text" name="supplement_intake" id="supplement_intake" placeholder="Supplement Intake"/>
+                <input type="text" name="exercise" id="exercise" placeholder="Exercise"/>
+                <input type="text" name="daily_duration" id="daily_duration" placeholder="Daily Duration"/>
+                <input type="text" name="notes" id="notes" placeholder="Notes"/>
         </div>
         <br />
         <div class="buttons">
@@ -68,18 +69,18 @@ tr:nth-child(even) {
     </tr>
   </thead>
   <tbody>
-    @foreach ($data as $data1)
-    <tr>
-      <td>{{ $data1->Diary_ID }}</td>
-      <td>{{ $data1->Member_ID }}</td>
-      <td>{{ $data1->Date }}</td>
-      <td>{{ $data1->Calorie_Intake }}</td>
-      <td>{{ $data1->Supplement_Intake }}</td>
-      <td>{{ $data1->Exercise }}</td>
-      <td>{{ $data1->Daily_Duration }}</td>
-      <td>{{ $data1->Notes }}</td>
-    </tr>
-    @endforeach
+        @foreach ($data as $data1)
+        <tr>
+            <td>{{ $data1->Diary_ID }}</td>
+            <td>{{ $data1->Member_ID }}</td>
+            <td>{{ $data1->Date }}</td>
+            <td>{{ $data1->Calorie_Intake }}</td>
+            <td>{{ $data1->Supplement_Intake }}</td>
+            <td>{{ $data1->Exercise }}</td>
+            <td>{{ $data1->Daily_Duration }}</td>
+            <td>{{ $data1->Notes }}</td>
+        </tr>
+        @endforeach
   </tbody>
 </table>
 

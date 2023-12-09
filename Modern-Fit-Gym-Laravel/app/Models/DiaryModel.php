@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
+use Illuminate\Http\Request;
 
 
 class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
@@ -102,69 +103,37 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
 
 
 
-    public function CreateData(){
-        // $databaseConnection = DB::connection('sqlite');
-
-        // // Retrieve form data
-        // $firstname = $_POST['firstname'];
-        // $lastname = $_POST['lastname'];
-        // $dob = $_POST['dob'];
-        // $address = $_POST['address'];
-        // $phone = $_POST['phone'];
-        // $email = $_POST['email'];
-        // $credit_details = $_POST['credit_details'];
-        // $password = $_POST['password'];
-
-        // // Encrypt sensitive data using the generated IV
-        // $encrypted_credit_details = openssl_encrypt($credit_details, 'aes-256-cbc', 'your_secret_key', 0, $iv);
-        // $encrypted_password = openssl_encrypt($password, 'aes-256-cbc', 'your_secret_key', 0, $iv);
-
-        // // Prepare and execute the SQL query
-        // $stmt = $db->prepare("INSERT INTO Members (First_Name, Last_Name, DOB, Address, Phone_Number, Email, Credit_Details, Password, IV) VALUES (:firstname, :lastname, :dob, :address, :phone, :email, :credit_details, :password, :iv)");
-        // $stmt->bindValue(':firstname', $firstname);
-        // $stmt->bindValue(':lastname', $lastname);
-        // $stmt->bindValue(':dob', $dob);
-        // $stmt->bindValue(':address', $address);
-        // $stmt->bindValue(':phone', $phone);
-        // $stmt->bindValue(':email', $email);
-        // $stmt->bindValue(':credit_details', $encrypted_credit_details);
-        // $stmt->bindValue(':password', $encrypted_password);
-        // $stmt->bindValue(':iv', $hex_iv); // Store the IV for decryption
-
-        // $result = $stmt->execute();
-
-        // $user = User::create([
-        //     'First_Name' => $validatedData['firstname'],
-        //     'Last_Name' => $validatedData['lastname'],
-        //     'DOB' => $validatedData['dob'],
-        //     'Address' => $validatedData['address'],
-        //     'Phone_Number' => $validatedData['phone'],
-        //     'Email' => $validatedData['email'],
-        //     'Credit_Details' => $validatedData['credit_details'],
-        //     'Password' => Crypt::encrypt($validatedData['password']), 
-        // ]);
-
-
-
-        // $date = input('Date');
-        // $calorieIntake = input('Calorie_Intake');
-        // $supplementIntake = input('Supplement_Intake');
-        // $exercise = input('Exercise');
-        // $dailyDuration = input('Daily_Duration');
-        // $notes = input('Notes');
-        // $createData = DB::insert('insert into Diary (Date, Calorie_Intake, Supplement_Intake, Exercise, Daily_Duration, Notes) values (Date, Calorie_Intake, Supplement_Intake, Exercise, Daily_Duration, Notes)', [$date, $calorieIntake, $supplementIntake, $exercise, $dailyDuration, $notes]);
+    public function CreateData(Request $request){
+        // $date = $request->input('date');
+        // $calorieIntake = $request->input('calorie_intake');
+        // $supplementIntake = $request->input('supplement_intake');
+        // $exercise = $request->input('exercise');
+        // $dailyDuration = $request->input('daily_duration');
+        // $notes = $request->input('notes');
     
-        // return $CreateData;
-
-        // $createData = DB::insert('insert into Diary (Date, Calorie_Intake, Supplement_Intake, Exercise, Daily_Duration, Notes) values (?, ?)', [1, 'Marc']);
-
+        // $createData = DB::insert('INSERT INTO Diary (Date, Calorie_Intake, Supplement_Intake, Exercise, Daily_Duration, Notes) VALUES (date, calorie_intake, supplement_intake, exercise, daily_duration, notes)', [$date, $calorieIntake, $supplementIntake, $exercise, $dailyDuration, $notes]);
+    
+        // return $createData;
+    
+        $date = $request->input('date');
+        $calorieIntake = $request->input('calorie_intake');
+        $supplementIntake = $request->input('supplement_intake');
+        $exercise = $request->input('exercise');
+        $dailyDuration = $request->input('daily_duration');
+        $notes = $request->input('notes');
+    
+        $data = DB::table('Diary')->insert([
+            'Date' => $date,
+            'Calorie_Intake' => $calorieIntake,
+            'Supplement_Intake' => $supplementIntake,
+            'Exercise' => $exercise,
+            'Daily_Duration' => $dailyDuration,
+            'Notes' => $notes
+        ]);
+        return $data;
+    
     }
     public function ReadData(){
-        // return Diary::all();
-        // $table = "Diary";
-        // $fillable = ["Member_ID", "Date", "Calorie_Intake", "Supplement_Intake", "Exercise", "Daily_Duration", "Notes"];
-        // $primaryKey = "Diary_ID";
-        // $timestamps = false;
         $data = DB::select('select * from Diary');
         return $data;
     }

@@ -19,18 +19,20 @@ class DiaryController extends Controller
     private $DailyDuration = 32;
     private $Notes = "notes user written";
 
+
+
     public function showDiary(){
         $diaryData = new DiaryModel();
         $data = $diaryData->ReadData();
         return view('diary', ['data' => $data]);
     }
 
-    public function creatDiaryData(){
-        $newDiaryData = new DiaryModel();
-        $newData = $newDiaryData->CreateData();
-        return view('diary', ['newData' => $newData]);
+    public function createDiaryData(Request $request){
+        $diaryData = new DiaryModel();
+        $data = $diaryData->CreateData($request);
+        return view('diary', ['data' => $data]);
     }
-
+    
 
 // shift f9 for brakpints
 
