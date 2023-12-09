@@ -24,6 +24,14 @@ class DiaryController extends Controller
         $data = $diaryData->ReadData();
         return view('diary', ['data' => $data]);
     }
+
+    public function creatDiaryData(){
+        $newDiaryData = new DiaryModel();
+        $newData = $newDiaryData->CreateData();
+        return view('diary', ['newData' => $newData]);
+    }
+
+
 // shift f9 for brakpints
 
     // Getter methods

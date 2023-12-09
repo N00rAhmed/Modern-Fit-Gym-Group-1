@@ -37,6 +37,7 @@ Route::get('/contact', function () {
 Route::get('/diary', [DiaryController::class, 'showDiary']);
 
 // Route::get('/diary', [DiaryController::class, 'index']); // Display form to add a diary entry
+Route::post('/create_data', [DiaryController::class, 'creatDiaryData']);
 
 
 
