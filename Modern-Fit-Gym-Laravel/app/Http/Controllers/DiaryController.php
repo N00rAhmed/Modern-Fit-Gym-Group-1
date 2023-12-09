@@ -22,7 +22,7 @@ class DiaryController extends Controller
     public function showDiary(){
         $diaryData = new DiaryModel();
         $data = $diaryData->ReadData();
-        return view('diary', array("Data"=>$data));
+        return view('diary', ['data' => $data]);
     }
 // shift f9 for brakpints
 

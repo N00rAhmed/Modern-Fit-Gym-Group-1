@@ -32,9 +32,9 @@
 
         </div>
 
-        @foreach ($Data as $data)
-    {{ $data -> Date}}
-@endforeach
+        @foreach ($data as $data1)
+        {{ $data1 -> Date}}
+        @endforeach
 
 
     </main>

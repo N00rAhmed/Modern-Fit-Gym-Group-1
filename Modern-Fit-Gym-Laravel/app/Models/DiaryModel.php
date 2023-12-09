@@ -3,6 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
 
@@ -110,7 +111,8 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
         // $fillable = ["Member_ID", "Date", "Calorie_Intake", "Supplement_Intake", "Exercise", "Daily_Duration", "Notes"];
         // $primaryKey = "Diary_ID";
         // $timestamps = false;
-        return DiaryModel::select('select * from Diary');
+        $data = DB::select('select * from Diary');
+        return $data;
     }
     public function UpdateData(){
 
