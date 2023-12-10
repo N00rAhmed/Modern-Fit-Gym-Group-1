@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\WorkoutModel;
-
 use App\Controllers\SearchFunction;
 
+// class WorkoutController extends Controller
 class Workout extends SearchFunction
 {
     private $WorkoutID = 2;
