@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<style>
+table {
+    
+  font-family: arial, sans-serif;
+  /* border-collapse: collapse;
+  width: 100%; */
+}
+
+td, th {
+
+  border: 1px solid #000000;
+  /* text-align: left;
+  padding: 8px; */
+}
+
+tr:nth-child(even) {
+
+  /* background-color: #dddddd; */
+}
+</style>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../Styles/regime.css"> -->
@@ -46,6 +69,45 @@
             <input type="text" name="amount" id="amount" placeholder="amount" />
             <button type="submit">Create Workout</button>
         </form>
+
+
+        <table>
+  <thead>
+    <tr>
+      <th>Workout_ID</th>
+      <th>Staff_ID</th>
+      <th>Member_ID</th>
+      <th>Exercise_Name</th>
+      <th>Exercise_Type</th>
+      <th>Description</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+  @if(is_array($data) || is_object($data))
+        @foreach ($data as $data1)
+            <tr>
+            <td>{{ $data1->Workout_ID }}</td>
+            <td>{{ $data1->Staff_ID }}</td>
+            <td>{{ $data1->Member_ID }}</td>
+
+
+        <td>{{ $data1->Exercise_Name }}</td>
+        <td>{{ $data1->Excercise_Type }}</td>
+        <td>{{ $data1->Description }}</td>
+        <td>{{ $data1->Amount }}</td>
+                <!-- Rest of your table data -->
+            </tr>
+        @endforeach
+    @else
+        <tr>
+            <td colspan="8">No data available</td>
+        </tr>
+    @endif
+  </tbody>
+</table>
+
+
 
     </main>
 

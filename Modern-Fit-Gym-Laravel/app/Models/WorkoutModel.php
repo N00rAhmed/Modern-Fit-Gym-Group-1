@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
 use App\Models\Interfaces\Subject;
 
-class Workout implements CRUDInterface, EncryptionInterface, Subject
+class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, Subject
 {
     private $WorkoutID = [2];
     private $StaffID = 4;
@@ -86,10 +89,10 @@ class Workout implements CRUDInterface, EncryptionInterface, Subject
         if (!$existingData) {
             // Insert data
             DB::table('Workout Plan')->insert([
-                'exercise_name' => $Exercise_Name,
-                'exercise_type' => $Exercise_Type,
-                'description' => $Description,
-                'amount' => $Amount
+                'Exercise_Name' => $Exercise_Name,
+                'Excercise_Type' => $Exercise_Type,
+                'Description' => $Description,
+                'Amount' => $Amount
             ]);
         }
     
@@ -116,7 +119,7 @@ class Workout implements CRUDInterface, EncryptionInterface, Subject
     public function NotifyObserver(){
 
     }
-    public function RegisterObserver(){
+    public function RegisterObserver($class){
 
     }
     public function RemoveObserver(){

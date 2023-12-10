@@ -6,6 +6,6 @@ use App\Models\Interfaces;
 
 interface Subject {
     public function NotifyObserver();
-    public function RegisterObserver();
+    public function RegisterObserver($class);
     public function RemoveObserver();
 }

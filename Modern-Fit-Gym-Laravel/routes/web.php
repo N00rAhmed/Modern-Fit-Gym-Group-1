@@ -71,16 +71,17 @@ Route::get('/plan', function () {
 //     return view('regime');
 // });
 Route::get('/regime', [WorkoutController::class, 'showWorkout']);
-Route::post('/diary', [WorkoutController::class, 'createWorkoutData'])->name('workout.submit');
+Route::post('/regime', [WorkoutController::class, 'createWorkoutData'])->name('workout.submit');
 
 Route::get('/trainer', function () {
     return view('trainer');
 });
-Route::get('/viewDiary', function () {
-    return view('viewDiary');
-});
+// Route::get('/viewDiary', function () {
+//     return view('viewDiary');
+// });
 
 // Route::get('/viewDiary', [DiaryController::class, 'showDiary']);
+Route::get('/viewDiary', [DiaryController::class, 'showDiaryTrainer']);
 
 
 
