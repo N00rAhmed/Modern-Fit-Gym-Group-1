@@ -104,17 +104,6 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
 
 
     public function CreateData(Request $request){
-        // $date = $request->input('date');
-        // $calorieIntake = $request->input('calorie_intake');
-        // $supplementIntake = $request->input('supplement_intake');
-        // $exercise = $request->input('exercise');
-        // $dailyDuration = $request->input('daily_duration');
-        // $notes = $request->input('notes');
-    
-        // $createData = DB::insert('INSERT INTO Diary (Date, Calorie_Intake, Supplement_Intake, Exercise, Daily_Duration, Notes) VALUES (date, calorie_intake, supplement_intake, exercise, daily_duration, notes)', [$date, $calorieIntake, $supplementIntake, $exercise, $dailyDuration, $notes]);
-    
-        // return $createData;
-    
         $date = $request->input('date');
         $calorieIntake = $request->input('calorie_intake');
         $supplementIntake = $request->input('supplement_intake');
@@ -122,19 +111,33 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
         $dailyDuration = $request->input('daily_duration');
         $notes = $request->input('notes');
     
-        $data = DB::table('Diary')->insert([
-            'Date' => $date,
-            'Calorie_Intake' => $calorieIntake,
-            'Supplement_Intake' => $supplementIntake,
-            'Exercise' => $exercise,
-            'Daily_Duration' => $dailyDuration,
-            'Notes' => $notes
-        ]);
-        return $data;
+        // Check if the entry already exists
+        $existingData = DB::table('Diary')
+            ->where('Notes', $notes)
+            // Add more conditions as needed to uniquely identify a record
+            ->first();
     
+        if (!$existingData) {
+            // Insert data
+            DB::table('Diary')->insert([
+                'Date' => $date,
+                'Calorie_Intake' => $calorieIntake,
+                'Supplement_Intake' => $supplementIntake,
+                'Exercise' => $exercise,
+                'Daily_Duration' => $dailyDuration,
+                'Notes' => $notes
+            ]);
+        }
+    
+        // Fetch all data after insertion (if needed)
+        $data = DB::table('Diary')->get()->toArray(); // Fetch all data and convert to array
+    
+        return $data;
     }
+        
     public function ReadData(){
-        $data = DB::select('select * from Diary');
+        // $data = DB::select('select * from Diary');
+        $data = DB::table('Diary')->get()->toArray();
         return $data;
     }
     public function UpdateData(){

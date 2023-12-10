@@ -69,34 +69,28 @@ tr:nth-child(even) {
     </tr>
   </thead>
   <tbody>
+  @if(is_array($data) || is_object($data))
         @foreach ($data as $data1)
-        <tr>
+            <tr>
             <td>{{ $data1->Diary_ID }}</td>
-            <td>{{ $data1->Member_ID }}</td>
-            <td>{{ $data1->Date }}</td>
-            <td>{{ $data1->Calorie_Intake }}</td>
-            <td>{{ $data1->Supplement_Intake }}</td>
-            <td>{{ $data1->Exercise }}</td>
-            <td>{{ $data1->Daily_Duration }}</td>
-            <td>{{ $data1->Notes }}</td>
-        </tr>
+        <td>{{ $data1->Member_ID }}</td>
+        <td>{{ $data1->Date }}</td>
+        <td>{{ $data1->Calorie_Intake }}</td>
+        <td>{{ $data1->Supplement_Intake }}</td>
+        <td>{{ $data1->Exercise }}</td>
+        <td>{{ $data1->Daily_Duration }}</td>
+        <td>{{ $data1->Notes }}</td>
+                <!-- Rest of your table data -->
+            </tr>
         @endforeach
+    @else
+        <tr>
+            <td colspan="8">No data available</td>
+        </tr>
+    @endif
   </tbody>
 </table>
 
-
-
-        <!-- @foreach ($data as $data1)
-        {{ $data1 -> Diary_ID}},
-        {{ $data1 -> Member_ID}},
-        {{ $data1 -> Date}},
-        {{ $data1 -> Calorie_Intake}},
-        {{ $data1 -> Supplement_Intake}},
-        {{ $data1 -> Exercise}},
-        {{ $data1 -> Daily_Duration}},
-        {{ $data1 -> Notes}}
-
-        @endforeach -->
 
 
     </main>

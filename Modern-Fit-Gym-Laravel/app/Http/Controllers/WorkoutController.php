@@ -1,6 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\WorkoutModel;
 
 use App\Controllers\SearchFunction;
 
@@ -24,6 +27,18 @@ class Workout extends SearchFunction
     //     // $Description = "description";
     //     // $Amount = 21;
     // }
+
+    public function showWorkout(){
+        $workoutData = new WorkoutModel();
+        $data = $workoutData->ReadData();
+        return view('regime', ['data' => $data]);
+    }
+    public function createWorkoutData(Request $request){
+        $createdWorkoutData = new WorkoutModel();
+        $data = $createdWorkoutData->CreateData($request);
+        return view('regime', ['data' => $data]);
+    }
+
 
     public function getWorkoutID()
     {

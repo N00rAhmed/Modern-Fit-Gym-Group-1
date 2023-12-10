@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\DiaryController;
+use App\Http\Controllers\WorkoutController;
 use App\Http\Models\DiaryModel;
 
 /*
@@ -61,15 +62,23 @@ Route::get('/nutritional', function () {
 Route::get('/plan', function () {
     return view('plan');
 });
-Route::get('/regime', function () {
-    return view('regime');
-});
+// Route::get('/regime', function () {
+//     return view('regime');
+// });
+Route::get('/regime', [WorkoutController::class, 'showWorkout']);
+Route::post('/diary', [WorkoutController::class, 'createWorkoutData'])->name('workout.submit');
+
 Route::get('/trainer', function () {
     return view('trainer');
 });
 Route::get('/viewDiary', function () {
     return view('viewDiary');
 });
+
+// Route::get('/viewDiary', [DiaryController::class, 'showDiary']);
+
+
+
 Route::get('/workout', function () {
     return view('workout');
 });

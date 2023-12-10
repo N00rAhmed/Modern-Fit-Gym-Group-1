@@ -26,20 +26,27 @@
         <p>make nutrion plan be on left side and excerise plan be on right side. try not to make it in columns</p>
 
         <h2>Nutritional Plan</h2>
-        <input placeholder="name" />
-        <input placeholder="weight" />
-        <input placeholder="calorie amount" />
-        <input placeholder="fat" />
-        <input placeholder="sugar" />
-        <input placeholder="vitamins" />
-        <button>Create Nutrition</button>
+
+
+            <input type="text" name="name" id="name" placeholder="name" />
+            <input type="text" name="weight" id="weight" placeholder="weight" />
+            <input type="text" name="calorie_amount" id="calorie_amount" placeholder="calorie amount" />
+            <input type="text" name="fat" id="fat" placeholder="fat" />
+            <input type="text" name="sugar" id="sugar" placeholder="sugar" />
+            <input type="text" name="vitamins" id="vitamins" placeholder="vitamins" />
+            <button type="submit">Create Nutrition</button>
 
         <h2>Workout Plan</h2>
-        <input placeholder="exercise name" />
-        <input placeholder="exercise type" />
-        <input placeholder="description" />
-        <input placeholder="amount" />
-        <button>Create Workout</button>
+        <form action="{{ route('workout.submit') }}" method="post">
+            @csrf <!-- {{ csrf_field() }} -->
+
+            <input type="text" name="exercise_name" id="exercise_name" placeholder="exercise name" />
+            <input type="text" name="exercise_type" id="exercise_type" placeholder="exercise type" />
+            <input type="text" name="description" id="description" placeholder="description" />
+            <input type="text" name="amount" id="amount" placeholder="amount" />
+            <button type="submit">Create Workout</button>
+        </form>
+
     </main>
 
     <footer>
