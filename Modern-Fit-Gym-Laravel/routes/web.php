@@ -21,12 +21,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Checks login details
+Route::post('/login', [LoginController::class, 'loginCheck'])->name('login.submit');
+
+//returns member id
+Route::get('/login', [LoginController::class, 'login']);
+
 // Route::get('/admin', function () {
 //     return view('admin');
 // });
 
 Route::get('/admin', [RegistrationController::class, 'index']);
-
 
 Route::get('/contact', function () {
     return view('contact');
