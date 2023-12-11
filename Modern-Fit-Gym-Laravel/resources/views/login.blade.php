@@ -24,38 +24,38 @@
     @extends('nav')
     @section('content')
 
-
-    <main>
+<main>
   <div class="subtitle">
       <h1>Login</h1>
   </div>
 
   <form action="{{ route('login.submit') }}" method="post">
-  @csrf
+    @csrf
       <fieldset>
-    <div class="input">
-      <input type="pin" placeholder="PIN" />
-      <br />
-      <input type="password" placeholder="USER CREATED password" />
-    </div>
-    <br />
-    <div class="loginbttn">
-      <button type="submit">Login</button>
-    </div>
-    <div class="regbttn">
-      <a href="/register">Register</a>
-    </div>
-  </fieldset>
+        <div class="input">
+          <input type="pin" name="pin" placeholder="PIN" />
+          <br/>
+          <input type="password" name="password" placeholder="USER CREATED password" />
+        </div>
+        <br/>
+        <div class="loginbttn">
+          <button type="submit">Login</button>
+        </div>
+        <div class="regbttn">
+          <a href="/register">Register</a>
+        </div>
+    </fieldset>
   </form>
-    
-    </main>
+  <?php
+  var_dump($SorF);
+  ?>
+</main>
 
-    <footer>
+<footer>
 
-    </footer>
+</footer>
 
-    @endsection
+   @endsection
 
-
-  </body>
+</body>
 </html>

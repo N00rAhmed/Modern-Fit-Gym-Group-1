@@ -9,7 +9,7 @@ use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
 use App\Models\Interfaces\Observer;
 
-class MemberModel implements CRUDInterface, EncryptionInterface, Observer
+class MembersModel extends Model implements CRUDInterface, EncryptionInterface, Observer
 {
     use HasFactory;
 
@@ -22,7 +22,7 @@ class MemberModel implements CRUDInterface, EncryptionInterface, Observer
     private $Email = ["tronn@gmail.com"];
     private $CreditDetails = ["283223092990"];
     private $Pin = [911];
-    private $Columns = "placeholder";
+    protected $Columns = "placeholder";
 
 
     public function getMemberID(){
@@ -90,11 +90,11 @@ class MemberModel implements CRUDInterface, EncryptionInterface, Observer
 
 
 
-    public function CreateData(){
+    public function CreateData(Request $request){
 
     }
     public function ReadData(){
-        $data = DB::select('select ' + $Columns + ' from Members');
+        $data = DB::select('select ' . $this->Columns . ' from Members');
         return $data;
     }
     public function UpdateData(){
@@ -106,7 +106,7 @@ class MemberModel implements CRUDInterface, EncryptionInterface, Observer
     public function Encryption(){
 
     }
-    public function Update(){
+    public function UpdateOb(){
 
     }
     public function SendEmail(){
@@ -115,4 +115,3 @@ class MemberModel implements CRUDInterface, EncryptionInterface, Observer
 
 
 }
-
