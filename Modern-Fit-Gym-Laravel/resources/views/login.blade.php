@@ -47,7 +47,7 @@
     </fieldset>
   </form>
   <?php
-  var_dump($SorF);
+  var_dump($ID);
   ?>
 </main>
 
