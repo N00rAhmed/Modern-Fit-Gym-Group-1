@@ -39,7 +39,12 @@ class WorkoutController extends Controller
         $data = $createdWorkoutData->CreateData($request);
         return view('regime', ['data' => $data]);
     }
-
+    public function updateWorkoutData(Request $request, $workoutID){
+        $updatedWorkoutData = new WorkoutModel();
+        $data = $updatedWorkoutData->UpdateData($request, $workoutID);
+            return view('regime', ['data' => $data]);
+    }
+        
 
     public function getWorkoutID()
     {

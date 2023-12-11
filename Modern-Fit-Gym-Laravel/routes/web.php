@@ -72,6 +72,8 @@ Route::get('/plan', function () {
 // });
 Route::get('/regime', [WorkoutController::class, 'showWorkout']);
 Route::post('/regime', [WorkoutController::class, 'createWorkoutData'])->name('workout.submit');
+// Route::get('/regime/{workoutID}', [WorkoutController::class, 'editWorkoutData'])->name('workout.edit');
+Route::post('/regime/{workoutID}', [WorkoutController::class, 'updateWorkoutData'])->name('workout.update');
 
 Route::get('/trainer', function () {
     return view('trainer');

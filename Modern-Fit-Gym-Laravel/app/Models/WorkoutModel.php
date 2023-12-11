@@ -107,9 +107,31 @@ class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, 
         return $data;
 
     }
-    public function UpdateData(){
-
+    public function UpdateData(Request $request, $workoutID){
+        $Exercise_Name = $request->input('exercise_name');
+        $Exercise_Type = $request->input('exercise_type');
+        $Description = $request->input('description');
+        $Amount = $request->input('amount');
+    
+        // Update data based on Workout ID
+        DB::table('Workout Plan')
+            ->where('Workout_ID', $workoutID)
+            ->update([
+                'Exercise_Name' => $Exercise_Name,
+                'Excercise_Type' => $Exercise_Type,
+                'Description' => $Description,
+                'Amount' => $Amount
+            ]);
+    
+        // Fetch updated data if needed
+        $updatedData = DB::table('Workout Plan')
+                        ->where('Workout_ID', $workoutID)
+                        ->first();
+    
+        return $updatedData;
     }
+
+
     public function DeleteData(){
 
     }

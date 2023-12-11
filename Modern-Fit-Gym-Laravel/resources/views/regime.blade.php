@@ -71,32 +71,26 @@ tr:nth-child(even) {
         </form>
 
 
-        <table>
-  <thead>
-    <tr>
-      <th>Workout_ID</th>
-      <th>Staff_ID</th>
-      <th>Member_ID</th>
-      <th>Exercise_Name</th>
-      <th>Exercise_Type</th>
-      <th>Description</th>
-      <th>Amount</th>
-    </tr>
-  </thead>
+<!-- Your existing table structure -->
+<!-- Your existing table structure -->
+<table>
+  <!-- ... -->
   <tbody>
-  @if(is_array($data) || is_object($data))
+    @if(is_array($data) || is_object($data))
         @foreach ($data as $data1)
+            <!-- Edit form -->
             <tr>
-            <td>{{ $data1->Workout_ID }}</td>
-            <td>{{ $data1->Staff_ID }}</td>
-            <td>{{ $data1->Member_ID }}</td>
-
-
-        <td>{{ $data1->Exercise_Name }}</td>
-        <td>{{ $data1->Excercise_Type }}</td>
-        <td>{{ $data1->Description }}</td>
-        <td>{{ $data1->Amount }}</td>
-                <!-- Rest of your table data -->
+                <td colspan="8">
+                    <form action="{{ route('workout.update', ['workoutID' => $data1->Workout_ID]) }}" method="post">
+                        @csrf
+                        <!-- Input fields for editing -->
+                        <input type="text" name="exercise_name" value="{{ $data1->Exercise_Name }}" />
+                        <input type="text" name="exercise_type" value="{{ $data1->Excercise_Type }}" />
+                        <input type="text" name="description" value="{{ $data1->Description }}" />
+                        <input type="text" name="amount" value="{{ $data1->Amount }}" />
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     @else
