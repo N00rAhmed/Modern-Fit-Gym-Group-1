@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\DiaryModel;
+use App\Models\Interfaces\SearchFunctionInterface;
 
 
-class DiaryController extends Controller
+class DiaryController extends Controller implements SearchFunctionInterface
 {
     
     private $MemberID = 1;

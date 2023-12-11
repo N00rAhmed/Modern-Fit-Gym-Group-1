@@ -23,10 +23,7 @@ class LoginController extends Controller
             if($PinAPass->Pin == $request->input('pin'))
             {
                 if(Hash::check($request->input('password'), $PinAPass->Password)){
-                    return view('login', ['SorF' => $success]);
-                }
-                else{
-                    return view('login', ['SorF' => $failure]);
+                    return view::share('ID', $PinAPass->MemberID);
                 }
             };
         }
@@ -35,17 +32,9 @@ class LoginController extends Controller
             if($PinAPass->Pin == $request->input('pin'))
             {
                 if(hash::check($request->input('password'), $PinAPass->Password)){
-                    return view('login', ['SorF' => $success]);
-                }
-                else{
-                    return view('login', ['SorF' => $failure]);
+                    return view::share('ID', $PinAPass->MemberID);
                 }
             };
         }
-    }
-
-    public function login()
-    {
-
     }
 }

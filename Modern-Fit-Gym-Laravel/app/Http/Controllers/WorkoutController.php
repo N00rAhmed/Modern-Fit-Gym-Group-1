@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\WorkoutModel;
-
-use App\Models\Interfaces\SearchFunction;
+use App\Models\Interfaces\SearchFunctionInterface;
 
 // class Workout extends SearchFunction
-class WorkoutController extends Controller
+class WorkoutController extends Controller implements SearchFunctionInterface
 {
     private $WorkoutID = 2;
     private $StaffID = 3;
