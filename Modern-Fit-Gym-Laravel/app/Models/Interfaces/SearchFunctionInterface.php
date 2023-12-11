@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class SearchFunction
+class SearchFunctionInterface
 {
     private $SearchQuery = "search query string";
 
