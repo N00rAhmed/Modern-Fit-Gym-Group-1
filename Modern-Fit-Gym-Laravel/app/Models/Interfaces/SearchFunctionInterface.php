@@ -2,21 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class SearchFunctionInterface
+use App\Models\Interfaces;
+
+interface SearchFunctionInterface
 {
-    private $SearchQuery = "search query string";
-
-    public function getSearchQuery()
-    {
-        return $SearchQuery;
-    }
-    public function setSearchQuery($search_query){
-        $SearchQuery = $search_query;
-    }
-
-
-    public function SearchFunction(){
-
-    }
-
+    public function SearchFunction();
 }
