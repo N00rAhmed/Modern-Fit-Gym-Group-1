@@ -3,29 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 use App\Models\MembersModel;
 use App\Models\StaffModel;
-
-
 
 class LoginController extends Controller
 {
     public function loginCheck(Request $request)
     {
-        $memberData = new MemberModel();
+        $memberData = new MembersModel();
         $staffData = new StaffModel();
         $memberData->setColumns('Pin, Password');
         $staffData->setColumns('Pin, Password');
-        $MemPinAPass = $memberData->ReadData();
-        $StaPinAPass = $staffData->ReadData();
         $success = "Done";
         $failure = "Failure";
-        foreach($MemPinAPass as $PinAPass)
+
+        foreach($memberData->ReadData() as $PinAPass)
         {
             if($PinAPass->Pin == $request->input('pin'))
             {
-                if(crypt::decrypt($PinAPass->Password) == $request->input('password')){
+                if(Hash::check($request->input('password'), $PinAPass->Password)){
                     return view('login', ['SorF' => $success]);
                 }
                 else{
@@ -33,11 +30,11 @@ class LoginController extends Controller
                 }
             };
         }
-        foreach($StaPinAPass as $PinAPass)
+        foreach($staffData->ReadData() as $PinAPass)
         {
             if($PinAPass->Pin == $request->input('pin'))
             {
-                if(crypt::decrypt($PinAPass->Password) == $request->input('password')){
+                if(hash::check($request->input('password'), $PinAPass->Password)){
                     return view('login', ['SorF' => $success]);
                 }
                 else{

@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-
-use Illuminate\Support\Facades\Crypt;
 
 class RegistrationController extends Controller
 {
@@ -45,7 +43,7 @@ class RegistrationController extends Controller
             'Phone_Number' => $validatedData['phone'],
             'Email' => $validatedData['email'],
             'Credit_Details' => $validatedData['credit_details'],
-            'Password' => Crypt::encrypt($validatedData['password']), 
+            'Password' => Hash::make($validatedData['password']), 
         ]);
 
         // Optionally, you can redirect the user after successful registration
