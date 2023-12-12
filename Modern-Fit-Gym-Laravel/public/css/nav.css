@@ -5,14 +5,13 @@ body {
     margin: 0px;
     font-family: "Roboto", sans-serif;
 }
-
 nav {
     /*display: flex; */
-    /* justify-content: center; */
+    /*justify-content: center; */
     /* align-items: center;
     background-color: #0d96b4;
     overflow: hidden;
-    size: auto; */
+    size: auto; this notes */
     display: flex;
     align-items: center;
     background-color: #0d96b4;
@@ -21,13 +20,95 @@ nav {
 .navMenu,
 .header,
 .navbar-logo {
-    /* display: flex; */
+    display: flex;
     /*margin-left: 10px;
     float: left;
     color: black;
-    text-align: center; */
+    text-align: center; noted */
 
     padding: 14px 20px;
+    display: flex;
+    margin-left: 10px;
+}
+
+.navMenu {
+    background-color: #0d96b4;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.navMenu:hover {
+    background-color: #41c4e0;
+}
+
+.navList {
+    display: flex;
+}
+
+.header {
+    padding-left: -20px;
+    margin-left: -20px;
+}
+
+.navbar-logo {
+    border-radius: 50%;
+}
+
+@media (max-width: 700px) {
+    .header {
+        display: none;
+    }
+}
+
+@media (max-width: 595px) {
+    .navbar-logo {
+        display: none;
+    }
+
+    nav {
+        margin: auto;
+        justify-content: center;
+    }
+
+    .navList {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navMenu:hover::after {
+        transform: scaleX(1); /* Full width on hover */
+    }
+}
+
+/*body {
+    min-height: 100vh;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+} */
+/*the og if goes wrong*/
+/*nav {
+    /*display: flex; */
+/* justify-content: center; */
+/* align-items: center;
+    background-color: #0d96b4;
+    overflow: hidden;
+    size: auto; this notes */
+/*  display: flex;
+    align-items: center;
+    background-color: #0d96b4;
+}
+
+.navMenu,
+.header,
+.navbar-logo {
+    /* display: flex; */
+/*margin-left: 10px;
+    float: left;
+    color: black;
+    text-align: center; noted */
+
+/*padding: 14px 20px;
     display: flex;
     margin-left: 10px;
 }
@@ -55,27 +136,5 @@ nav {
 @media (max-width: 700px) {
     .header {
         display: none;
-    }
-}
-
-/* previousely max-width: 600px */
-/*@media (max-width: 800px) { this for the ineractive display
-    nav {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    .navbar-logo {
-        position: static;
-        margin-bottom: 10px;
-    }
-
-    nav {
-        flex-direction: column;
-    }
-
-    nav a {
-        margin: 5px 0;
     }
 } */
