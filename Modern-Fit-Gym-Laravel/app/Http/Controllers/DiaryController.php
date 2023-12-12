@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\DiaryModel;
+use App\Models\Interfaces\SearchFunctionInterface;
 
 
-class DiaryController extends Controller
+class DiaryController extends Controller implements SearchFunctionInterface
 {
     
     private $MemberID = 1;
@@ -20,10 +20,25 @@ class DiaryController extends Controller
     private $Notes = "notes user written";
 
     public function showDiary(){
-        DiaryModel::all();
-        return view('diary', ['diaryData' => $diaryData]);
+        $diaryData = new DiaryModel();
+        $data = $diaryData->ReadData();
+        return view('diary', ['data' => $data]);
     }
 
+    public function createDiaryData(Request $request){
+        $diaryData = new DiaryModel();
+        $data = $diaryData->CreateData($request);
+        return view('diary', ['data' => $data]);
+    }
+    
+    public function showDiaryTrainer(){
+        $diaryData = new DiaryModel();
+        $data = $diaryData->ReadData();
+        return view('viewDiary', ['data' => $data]);
+    }
+
+
+// shift f9 for brakpints
 
     // Getter methods
     public function getMemberID()

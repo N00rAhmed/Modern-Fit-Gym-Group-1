@@ -1,9 +1,12 @@
 <?php
-namespace App\Models\DiaryModel;
+
+namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
+use Illuminate\Http\Request;
 
 
 class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
@@ -12,7 +15,6 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
     use HasFactory;
 
 
-    protected $table = 'Diary'; // Assuming 'diaries' is the table name
 
 
     // private $DiaryID = [6];
@@ -101,12 +103,42 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
 
 
 
-    public function CreateData(){
-        // $databaseConnection = DB::connection('sqlite');
+    public function CreateData(Request $request){
+        $date = $request->input('date');
+        $calorieIntake = $request->input('calorie_intake');
+        $supplementIntake = $request->input('supplement_intake');
+        $exercise = $request->input('exercise');
+        $dailyDuration = $request->input('daily_duration');
+        $notes = $request->input('notes');
+    
+        // Check if the entry already exists
+        $existingData = DB::table('Diary')
+            ->where('Notes', $notes)
+            // Add more conditions as needed to uniquely identify a record
+            ->first();
+    
+        if (!$existingData) {
+            // Insert data
+            DB::table('Diary')->insert([
+                'Date' => $date,
+                'Calorie_Intake' => $calorieIntake,
+                'Supplement_Intake' => $supplementIntake,
+                'Exercise' => $exercise,
+                'Daily_Duration' => $dailyDuration,
+                'Notes' => $notes
+            ]);
+        }
+    
+        // Fetch all data after insertion (if needed)
+        $data = DB::table('Diary')->get()->toArray(); // Fetch all data and convert to array
+    
+        return $data;
     }
+        
     public function ReadData(){
-        return Diary::all();
-
+        // $data = DB::select('select * from Diary');
+        $data = DB::table('Diary')->get()->toArray();
+        return $data;
     }
     public function UpdateData(){
 
