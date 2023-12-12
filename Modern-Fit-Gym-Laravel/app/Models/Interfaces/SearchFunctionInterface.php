@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models\Interfaces;
 
 use App\Models\Interfaces;
 

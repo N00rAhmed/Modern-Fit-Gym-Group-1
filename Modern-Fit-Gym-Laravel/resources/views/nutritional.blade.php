@@ -16,9 +16,8 @@
 
     </main>
 
-    <footer>
 
-    </footer>
     @endsection
+
 </body>
 </html>
