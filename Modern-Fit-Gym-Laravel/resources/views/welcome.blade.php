@@ -26,7 +26,7 @@
         <div class="welcome">
             <h1><strong>Welcome to Modern Fit Gym etc!</strong></h1>
         </div>
-        <div class="container">
+        <div class="infoContainer">
             <div class="info">
                 <h2><strong>What we are About</strong></h2>
                 <p>ModernFit Gym is based in sheffield. We have an array of facilities and seasoned specialists offering nutritional and workout guidance.<br> We are a gym who used to be local and now have started to expand across United Kingdom.</p>
