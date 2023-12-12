@@ -62,5 +62,4 @@
     </main>
     @endsection
 </body>
-
 </html>
