@@ -47,7 +47,7 @@
     </fieldset>
   </form>
   <?php
-  var_dump($ID);
+
   ?>
 </main>
 

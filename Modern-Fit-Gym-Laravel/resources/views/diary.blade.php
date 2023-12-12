@@ -92,7 +92,6 @@ tr:nth-child(even) {
 </table>
 
 
-
     </main>
 
     <footer>

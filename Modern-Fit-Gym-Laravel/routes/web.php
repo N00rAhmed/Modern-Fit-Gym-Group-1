@@ -6,6 +6,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\DiaryController;
 use App\Http\Controllers\WorkoutController;
 use App\Http\Models\DiaryModel;
+use App\Http\Models\Interfaces\SearchFunctionInterface;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,7 @@ Route::get('/register', function () {
     return view('register');
 });
 // Route::get('/register', [RegistrationController::class, 'index']);
-Route::post('/register', [RegistrationController::class, 'submit'])->name('register.submit');
+Route::post('/register', [RegistrationController::class, 'createDiaryData'])->name('register.submit');
 
 Route::get('/member', function () {
     return view('member');
