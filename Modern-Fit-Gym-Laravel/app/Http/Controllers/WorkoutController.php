@@ -1,10 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Http\Controllers;
 
-use App\Controllers\SearchFunction;
+use Illuminate\Http\Request;
+use App\Models\WorkoutModel;
+use App\Models\Interfaces\SearchFunctionInterface;
 
-class Workout extends SearchFunction
+// class Workout extends SearchFunction
+class WorkoutController extends Controller implements SearchFunctionInterface
 {
     private $WorkoutID = 2;
     private $StaffID = 3;
@@ -24,6 +27,23 @@ class Workout extends SearchFunction
     //     // $Description = "description";
     //     // $Amount = 21;
     // }
+
+    public function showWorkout(){
+        $workoutData = new WorkoutModel();
+        $data = $workoutData->ReadData();
+        return view('regime', ['data' => $data]);
+    }
+    public function createWorkoutData(Request $request){
+        $createdWorkoutData = new WorkoutModel();
+        $data = $createdWorkoutData->CreateData($request);
+        return view('regime', ['data' => $data]);
+    }
+    public function updateWorkoutData(Request $request, $workoutID){
+        $updatedWorkoutData = new WorkoutModel();
+        $data = $updatedWorkoutData->UpdateData($request, $workoutID);
+            return view('regime', ['data' => $data]);
+    }
+        
 
     public function getWorkoutID()
     {

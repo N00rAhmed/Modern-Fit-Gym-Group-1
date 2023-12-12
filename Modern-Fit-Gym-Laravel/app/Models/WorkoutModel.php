@@ -1,20 +1,16 @@
-<!-- implement attributes similar to how u did for workout controllers  -->
-<!-- do the get and set functions -->
-<!-- use arryays where it says arrays in the model on class diagram -->
-<!-- keep function creat data etc empty -->
-
-
 <?php
 
-// namespace App;
-// namespace App\Models;
+namespace App\Models;
 
-// use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
 use App\Models\Interfaces\Subject;
 
-class Workout implements CRUDInterface, EncryptionInterface, Subject
+class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, Subject
 {
     private $WorkoutID = [2];
     private $StaffID = 4;
@@ -78,15 +74,64 @@ class Workout implements CRUDInterface, EncryptionInterface, Subject
     }
 
 
-    public function CreateData(){
+    public function CreateData(Request $request){
+        $Exercise_Name = $request->input('exercise_name');
+        $Exercise_Type = $request->input('exercise_type');
+        $Description = $request->input('description');
+        $Amount = $request->input('amount');
+    
+        // Check if the entry already exists
+        $existingData = DB::table('Workout Plan')
+            ->where('description', $Description)
+            // Add more conditions as needed to uniquely identify a record
+            ->first();
+    
+        if (!$existingData) {
+            // Insert data
+            DB::table('Workout Plan')->insert([
+                'Exercise_Name' => $Exercise_Name,
+                'Excercise_Type' => $Exercise_Type,
+                'Description' => $Description,
+                'Amount' => $Amount
+            ]);
+        }
+    
+        // Fetch all data after insertion (if needed)
+        $data = DB::table('Workout Plan')->get()->toArray(); // Fetch all data and convert to array
+    
+        return $data;
 
     }
     public function ReadData(){
+        $data = DB::table('Workout Plan')->get()->toArray();
+        return $data;
 
     }
-    public function UpdateData(){
-
+    public function UpdateData(Request $request, $workoutID){
+        $Exercise_Name = $request->input('exercise_name');
+        $Exercise_Type = $request->input('exercise_type');
+        $Description = $request->input('description');
+        $Amount = $request->input('amount');
+    
+        // Update data based on Workout ID
+        DB::table('Workout Plan')
+            ->where('Workout_ID', $workoutID)
+            ->update([
+                'Exercise_Name' => $Exercise_Name,
+                'Excercise_Type' => $Exercise_Type,
+                'Description' => $Description,
+                'Amount' => $Amount
+            ]);
+    
+        // Fetch updated data if needed
+        $updatedData = DB::table('Workout Plan')
+                        ->where('Workout_ID', $workoutID)
+                        ->first();
+    
+        return $updatedData;
     }
+
+
     public function DeleteData(){
 
     }
@@ -96,7 +141,7 @@ class Workout implements CRUDInterface, EncryptionInterface, Subject
     public function NotifyObserver(){
 
     }
-    public function RegisterObserver(){
+    public function RegisterObserver($class){
 
     }
     public function RemoveObserver(){

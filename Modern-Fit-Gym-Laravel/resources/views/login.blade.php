@@ -24,33 +24,38 @@
     @extends('nav')
     @section('content')
 
-
-    <main>
+<main>
   <div class="subtitle">
       <h1>Login</h1>
   </div>
-  <fieldset>
-      <div class="input">
-        <input type="text" placeholder="Username PIN" />
-      <br />
-        <input type="text" placeholder="USER CREATED password" />
-      </div>
-      <br />
-      <div class="loginbttn">
-        <a href="/member"><button>Login</button></a>
-    </div> 
-    <div class="regbttn">
-        <a href="/register">Register</a>
-      </div>
-  </fieldset>
-    </main>
 
-    <footer>
+  <form action="{{ route('login.submit') }}" method="post">
+    @csrf
+      <fieldset>
+        <div class="input">
+          <input type="pin" name="pin" placeholder="PIN" />
+          <br/>
+          <input type="password" name="password" placeholder="USER CREATED password" />
+        </div>
+        <br/>
+        <div class="loginbttn">
+          <button type="submit">Login</button>
+        </div>
+        <div class="regbttn">
+          <a href="/register">Register</a>
+        </div>
+    </fieldset>
+  </form>
+  <?php
+  var_dump($ID);
+  ?>
+</main>
 
-    </footer>
+<footer>
 
-    @endsection
+</footer>
 
+   @endsection
 
-  </body>
+</body>
 </html>
