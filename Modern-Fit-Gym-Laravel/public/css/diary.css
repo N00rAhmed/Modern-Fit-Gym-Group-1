@@ -1,53 +1,53 @@
 main {
     width: 90%;
     margin: auto;
-}
-
-main h1 {
     text-align: center;
 }
 
-main p {
-    text-align: center;
+h2 {
+    margin-bottom: 20px;
 }
 
-main {
-    width: 90%;
-    margin: auto;
-}
-
-main h1 {
-    text-align: center;
-}
-
-main p {
-    text-align: center;
-}
-
-/*.input {
-    display: center;
-    justify-content: center;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    width: 500px;
-    
-}*/
 .input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 10px;
+    max-width: 400px;
+    margin: auto;
 }
 
-.buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+input {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.coloured-button {
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: #0d96b4;
+    color: #fff;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 10px;
     text-align: center;
 }
 
-form {
-    margin: auto;
-    width: fit-content;
+th {
+    background-color: #0d96b4;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
