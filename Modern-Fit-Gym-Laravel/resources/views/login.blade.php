@@ -40,6 +40,7 @@
     <br />
     <div class="loginbttn">
       <button type="submit">Login</button>
+      <a href= "/member"></a>
     </div>
     <div class="regbttn">
       <a href="/register">Register</a>
@@ -48,10 +49,6 @@
   </form>
 
     </main>
-
-    <footer>
-
-    </footer>
 
     @endsection
 
