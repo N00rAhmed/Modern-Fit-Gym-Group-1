@@ -13,8 +13,8 @@ class LoginController extends Controller
     {
         $memberData = new MembersModel();
         $staffData = new StaffModel();
-        $memberData->setColumns('Pin, Password');
-        $staffData->setColumns('Pin, Password');
+        $memberData->setColumns('MemberID, Pin, Password');
+        $staffData->setColumns('Staff_ID, Pin, Password');
         $success = "Done";
         $failure = "Failure";
 

@@ -46,9 +46,9 @@
         </div>
     </fieldset>
   </form>
-  <?php
-  var_dump($ID);
-  ?>
+  <!-- <?php
+  // var_dump($ID);
+  ?> -->
 </main>
 
 <footer>
