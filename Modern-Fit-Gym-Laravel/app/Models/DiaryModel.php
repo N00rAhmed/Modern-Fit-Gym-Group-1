@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 
 class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
@@ -103,13 +104,51 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
 
 
 
+    // public function CreateData(Request $request){
+    //     $date = $request->input('date');
+    //     $calorieIntake = $request->input('calorie_intake');
+    //     $supplementIntake = $request->input('supplement_intake');
+    //     $exercise = $request->input('exercise');
+    //     $dailyDuration = $request->input('daily_duration');
+    //     $notes = $request->input('notes');
+    
+    //     // Check if the entry already exists
+    //     $existingData = DB::table('Diary')
+    //         ->where('Notes', $notes)
+    //         // Add more conditions as needed to uniquely identify a record
+    //         ->first();
+    
+    //     if (!$existingData) {
+    //         // Insert data
+    //         DB::table('Diary')->insert([
+    //             'Date' => $date,
+    //             'Calorie_Intake' => $calorieIntake,
+    //             'Supplement_Intake' => $supplementIntake,
+    //             'Exercise' => $exercise,
+    //             'Daily_Duration' => $dailyDuration,
+    //             'Notes' => $notes
+    //         ]);
+    //     }
+    
+    //     // Fetch all data after insertion (if needed)
+    //     $data = DB::table('Diary')->get()->toArray(); // Fetch all data and convert to array
+    
+    //     return $data;
+    // }
+
     public function CreateData(Request $request){
-        $date = $request->input('date');
-        $calorieIntake = $request->input('calorie_intake');
-        $supplementIntake = $request->input('supplement_intake');
-        $exercise = $request->input('exercise');
-        $dailyDuration = $request->input('daily_duration');
-        $notes = $request->input('notes');
+        $date = Crypt::encrypt($request->input('date'));
+        $calorieIntake = Crypt::encrypt($request->input('calorie_intake'));
+        $supplementIntake = Crypt::encrypt($request->input('supplement_intake'));
+        $exercise = Crypt::encrypt($request->input('exercise'));
+        $dailyDuration = Crypt::encrypt($request->input('daily_duration'));
+        $notes = Crypt::encrypt($request->input('notes'));
+
+        // Encrypt other sensitive fields similarly
+        
+        // $exercise = $request->input('exercise');
+        // $dailyDuration = $request->input('daily_duration');
+        // $notes = $request->input('notes');
     
         // Check if the entry already exists
         $existingData = DB::table('Diary')
@@ -130,14 +169,48 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
         }
     
         // Fetch all data after insertion (if needed)
-        $data = DB::table('Diary')->get()->toArray(); // Fetch all data and convert to array
+
+        $data = DB::table('Diary')->get()->toArray();
+
+        // Decrypt specific fields in each entry
+        foreach ($data as $entry) {
+            $entry->Date = Crypt::decrypt($entry->Date);
+
+            $entry->Calorie_Intake = Crypt::decrypt($entry->Calorie_Intake);
+            $entry->Supplement_Intake = Crypt::decrypt($entry->Supplement_Intake);
+            $entry->Exercise = Crypt::decrypt($entry->Exercise);
+            $entry->Daily_Duration = Crypt::decrypt($entry->Daily_Duration);
+            $entry->Notes = Crypt::decrypt($entry->Notes);
+
+            // Decrypt other encrypted fields similarly
+        }
     
         return $data;
+    
+
+        // $data = DB::table('Diary')->get()->toArray();
+    
+        // return $data;
     }
+
         
     public function ReadData(){
         // $data = DB::select('select * from Diary');
         $data = DB::table('Diary')->get()->toArray();
+
+        foreach ($data as $entry) {
+            $entry->Date = Crypt::decrypt($entry->Date);
+
+            $entry->Calorie_Intake = Crypt::decrypt($entry->Calorie_Intake);
+            $entry->Supplement_Intake = Crypt::decrypt($entry->Supplement_Intake);
+            $entry->Exercise = Crypt::decrypt($entry->Exercise);
+            $entry->Daily_Duration = Crypt::decrypt($entry->Daily_Duration);
+            $entry->Notes = Crypt::decrypt($entry->Notes);
+
+            // Decrypt other encrypted fields similarly
+        }
+
+
         return $data;
     }
     public function UpdateData(){

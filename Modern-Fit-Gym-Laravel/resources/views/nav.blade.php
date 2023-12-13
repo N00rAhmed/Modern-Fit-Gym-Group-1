@@ -11,10 +11,10 @@
 
 </head>
 <body>
-<header>
-        <nav>
+<!--<header> og and works
+        <nav> -->
             <!-- <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" /> -->
-            <a href="/"><img class="navbar-logo" src="{{ asset('Images/Image2.png') }}" height="100px" width="100px"/></a>
+            <!--<a href="/"><img class="navbar-logo" src="{{ asset('Images/Image2.png') }}" height="100px" width="100px"/></a>
 
             <h2 class="header">Modern Fit Gym</h2>
             
@@ -23,7 +23,23 @@
             <a href="/login" class="navMenu">Login</a>
             <a href="/contact" class="navMenu">Contact</a>
         </nav>
-    </header>
+</header>  -->
+
+<header> 
+        <nav> 
+            <!-- <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" /> -->
+            <a href="/"><img class="navbar-logo" src="{{ asset('Images/Image2.png') }}" height="100px" width="100px"/></a>
+
+            <h2 class="header">Modern Fit Gym</h2>
+            <div class="navList">
+            <a href="/" class="navMenu">Home</a>
+            <a href="/nutritional" class="navMenu">Nutritional</a>
+            <a href="/login" class="navMenu">Login</a>
+            <a href="/contact" class="navMenu">Contact</a>
+            </div>
+        </nav>
+</header> 
+
 
     <!-- Content Section -->
     <div class="content">
