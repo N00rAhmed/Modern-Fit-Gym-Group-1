@@ -22,6 +22,7 @@
                 <input type="text" name="exercise" id="exercise" placeholder="Exercise" />
                 <input type="text" name="daily_duration" id="daily_duration" placeholder="Daily Duration" />
                 <input type="text" name="notes" id="notes" placeholder="Notes" />
+                <br />
                 <button type="submit" class="coloured-button">Add</button>
             </form>
         </div>

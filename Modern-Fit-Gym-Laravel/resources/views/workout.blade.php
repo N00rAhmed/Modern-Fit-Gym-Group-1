@@ -14,14 +14,27 @@
 
     <main>
     <div class="table-container">
-        <div class="table-with-search">
+        <!-- <div class="table-with-search">
             <table class="Form">
                 <caption>Form</caption>
                 <tr>
                     <th>Header</th>
                 </tr>
             </table>
+        </div> -->
+        <fieldset>
+        <legend>Form</legend>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Enter member ID" required/>
         </div>
+        <br>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter your email" required/>
+        </div>
+        <br>
+        </fieldset>
 
         <div class="table-with-search">
             <table class="table">
