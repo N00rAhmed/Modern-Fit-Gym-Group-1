@@ -17,13 +17,10 @@
         <h1>Welcome Member</h1>
         <div class="cards">
 
-            <div class="card1"><a href="/diary">Go to My diary</a></div> 
-
-            <div class="card3"><a href="/workout">View My Workout plan</a></div>
-            
-            <div class="card2"><a href="/nutritional">Nutritional Information</a></div>
-
-            <div class="card4"><a href="/plan">View my Nutritional Plan</a></div>
+            <div class="card"><a href="/diary">Go to My diary</a></div> 
+            <div class="card"><a href="/workout">View My Workout plan</a></div>
+            <div class="card"><a href="/nutritional">Nutritional Information</a></div>
+            <div class="card"><a href="/plan">View my Nutritional Plan</a></div>
             
         </div>
 
