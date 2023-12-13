@@ -12,56 +12,100 @@ main p {
 }
 
 .card {
-    background-color: dodgerblue;
-    color: white;
+    background-color: #0d96b4;
+    color: black;
     padding: 1rem;
-    height: 4rem;
+    width: 300px;
+    height: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card1 {
-    background-color: #837f85;
-    color: white;
-    height: 250px;
-    width: 650px;
-}
-.card2 {
-    background-color: rgb(73, 84, 95);
-    color: white;
-    height: 250px;
-    width: 650px;
+.card:hover {
+    background-color: #41c4e0;
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.5);
 }
 
-.card3 {
-    background-color: rgb(73, 84, 95);
-    color: white;
-    height: 250px;
-    width: 650px;
+.card a {
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
 }
 
-.card4 {
-    background-color: rgb(73, 84, 95);
-    color: white;
-    height: 250px;
-    width: 650px;
+.card a:hover {
+    text-decoration: underline;
 }
+
+/*.cards {
+    max-width: fit-content;
+    display: flex;
+    gap: 1em;
+    padding-left: 2%;
+    padding-right: 2%;
+} */
 
 .cards {
-    max-width: 1200px;
-    /* margin: 0 auto; */
-    display: grid;
-    gap: 1rem;
+    display: flex; /*makes responsive*/
+    width: auto;
+    margin: none;
+    padding: 10%; /*centers it now*/
+    padding-top: 5px;
+    padding-bottom: 10px;
+    gap: 2%;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 1800px) {
     .cards {
-        grid-template-columns: repeat(2, 1fr);
+        padding: 5%; /* it doesnt wanna center so this somehow does the job*/
+        padding-top: 5px;
     }
 }
-@media (min-width: 900px) {
+
+@media (max-width: 1400px) {
+    .cards {
+        padding: 2.5%;
+        padding-top: 5px;
+    }
+}
+
+@media (max-width: 1270px) {
+    .cards {
+        display: block;
+        flex-direction: column;
+        padding: 1%;
+    }
+
+    .card {
+        padding: 1.5%;
+        width: auto;
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+/*@media (min-width: 1350px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1350px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+@media (max-width: 985px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+} */
 
 .diary-container {
     height: 250px;
