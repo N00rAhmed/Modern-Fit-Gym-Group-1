@@ -135,17 +135,21 @@ class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, 
     public function DeleteData(){
 
     }
+    
     public function Encryption(){
 
     }
-    public function NotifyObserver(){
 
+    public function NotifyObserver(){
+        foreach ($observerList as $ob){
+            ob->UpdateOb();
+        }
     }
     public function RegisterObserver($class){
-
+        $ObserverList = ['MembersModel', 'StaffModel'];
     }
     public function RemoveObserver(){
-
+        $ObserverList = [];
     }
 
     
