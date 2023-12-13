@@ -66,6 +66,7 @@ main p {
         padding: 1.5%;
         width: auto;
         height: auto;
+        margin-bottom: 8px;
     }
 }
 

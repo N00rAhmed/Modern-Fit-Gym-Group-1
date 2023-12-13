@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\RegistrationModel;
 
 class RegistrationController extends Controller
 {
@@ -15,13 +16,32 @@ class RegistrationController extends Controller
         $accounts = User::all();
 
         return view('admin', ['accounts' => $accounts]);
-
     }
     
 
-    public function submit(Request $request)
+    public function createDiaryData(Request $request)
     {
-        // Validate the form data
+        $RegistrationData = new RegistrationModel();
+        $RegistrationData->CreateData($request);
+        return redirect('/login')->with('success', 'Registration successful! Please log in.');
+        /*
+        $memberData = new MembersModel();
+        $staffData = new StaffModel();
+        $memberData->setColumns('Pin');
+        $staffData->setColumns('Pin');
+        $ranPin = rand(1, 100000);
+        foreach($memberData->ReadData() as $memPin){
+            if ($memPin->Pin == $ranPin){
+                $ranPin = rand(1,100000);
+            }
+        }
+
+        foreach($staffData->ReadData() as $staffPin){
+            if ($staffPin->Pin == $ranPin){
+                $ranPin = rand(1,100000);
+            }
+        }
+
         // Validate the form data
         $validatedData = $request->validate([
             'firstname' => 'required',
@@ -43,11 +63,13 @@ class RegistrationController extends Controller
             'Phone_Number' => $validatedData['phone'],
             'Email' => $validatedData['email'],
             'Credit_Details' => $validatedData['credit_details'],
+            'Pin' => $ranPin,
             'Password' => Hash::make($validatedData['password']), 
         ]);
 
         // Optionally, you can redirect the user after successful registration
         return redirect('/login')->with('success', 'Registration successful! Please log in.');
+        */
     }
 
 }

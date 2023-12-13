@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Crypt;
 
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\EncryptionInterface;
@@ -75,14 +76,14 @@ class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, 
 
 
     public function CreateData(Request $request){
-        $Exercise_Name = $request->input('exercise_name');
-        $Exercise_Type = $request->input('exercise_type');
-        $Description = $request->input('description');
-        $Amount = $request->input('amount');
+        $Exercise_Name = Crypt::encrypt($request->input('exercise_name'));
+        $Excercise_Type = Crypt::encrypt($request->input('exercise_type'));
+        $Description = Crypt::encrypt($request->input('description'));
+        $Amount = Crypt::encrypt($request->input('amount'));
     
         // Check if the entry already exists
         $existingData = DB::table('Workout Plan')
-            ->where('description', $Description)
+            ->where('Description', $Description)
             // Add more conditions as needed to uniquely identify a record
             ->first();
     
@@ -90,35 +91,59 @@ class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, 
             // Insert data
             DB::table('Workout Plan')->insert([
                 'Exercise_Name' => $Exercise_Name,
-                'Excercise_Type' => $Exercise_Type,
+                'Excercise_Type' => $Excercise_Type,
                 'Description' => $Description,
                 'Amount' => $Amount
             ]);
         }
     
         // Fetch all data after insertion (if needed)
-        $data = DB::table('Workout Plan')->get()->toArray(); // Fetch all data and convert to array
+        $data = DB::table('Workout Plan')->get()->toArray();
+    
+        // Decrypt specific fields in each entry
+        foreach ($data as $entry) {
+            $entry->Exercise_Name = Crypt::decrypt($entry->Exercise_Name);
+            $entry->Excercise_Type = Crypt::decrypt($entry->Excercise_Type);
+            $entry->Description = Crypt::decrypt($entry->Description);
+            $entry->Amount = Crypt::decrypt($entry->Amount);
+    
+            // Decrypt other encrypted fields similarly
+        }
     
         return $data;
-
     }
+
+
     public function ReadData(){
         $data = DB::table('Workout Plan')->get()->toArray();
+
+        foreach ($data as $entry) {
+            $entry->Exercise_Name = Crypt::decrypt($entry->Exercise_Name);
+            $entry->Excercise_Type = Crypt::decrypt($entry->Excercise_Type);
+            $entry->Description = Crypt::decrypt($entry->Description);
+            $entry->Amount = Crypt::decrypt($entry->Amount);
+    
+            // Decrypt other encrypted fields similarly
+        }
+
+
         return $data;
 
     }
+
+
     public function UpdateData(Request $request, $workoutID){
-        $Exercise_Name = $request->input('exercise_name');
-        $Exercise_Type = $request->input('exercise_type');
-        $Description = $request->input('description');
-        $Amount = $request->input('amount');
+        $Exercise_Name = Crypt::encrypt($request->input('exercise_name'));
+        $Excercise_Type = Crypt::encrypt($request->input('exercise_type'));
+        $Description = Crypt::encrypt($request->input('description'));
+        $Amount = Crypt::encrypt($request->input('amount'));
     
         // Update data based on Workout ID
-        DB::table('Workout Plan')
+        $data = DB::table('Workout Plan')
             ->where('Workout_ID', $workoutID)
             ->update([
                 'Exercise_Name' => $Exercise_Name,
-                'Excercise_Type' => $Exercise_Type,
+                'Excercise_Type' => $Excercise_Type,
                 'Description' => $Description,
                 'Amount' => $Amount
             ]);
@@ -128,24 +153,36 @@ class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, 
                         ->where('Workout_ID', $workoutID)
                         ->first();
     
-        return $updatedData;
+        if ($updatedData) {
+            $updatedData->Exercise_Name = Crypt::decrypt($updatedData->Exercise_Name);
+            $updatedData->Excercise_Type = Crypt::decrypt($updatedData->Excercise_Type);
+            $updatedData->Description = Crypt::decrypt($updatedData->Description);
+            $updatedData->Amount = Crypt::decrypt($updatedData->Amount);
+            // Decrypt other encrypted fields similarly
+        }
+    
+        return ['data' => $data, 'updatedData' => $updatedData];
     }
-
+    
 
     public function DeleteData(){
 
     }
+    
     public function Encryption(){
 
     }
-    public function NotifyObserver(){
 
+    public function NotifyObserver(){
+        foreach ($observerList as $ob){
+            ob->UpdateOb();
+        }
     }
     public function RegisterObserver($class){
-
+        $ObserverList = ['MembersModel', 'StaffModel'];
     }
     public function RemoveObserver(){
-
+        $ObserverList = [];
     }
 
     

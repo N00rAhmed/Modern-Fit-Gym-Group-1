@@ -1,6 +1,7 @@
 body {
     min-height: 100vh;
-    margin: 0px;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
 }
 
 main {
@@ -8,14 +9,21 @@ main {
     margin: auto;
 }
 
-main h1 {
-    text-align: center;
+/* Form Styling */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-main p {
-    text-align: center;
+legend {
+    font-weight: bold;
 }
 
+.form-row {
+    margin-bottom: 15px;
+}
 
 /* Container for tables */
 .table-container {
@@ -27,7 +35,7 @@ main p {
 
 /* Styling for tables with search */
 .table-with-search {
-    width: calc(33.33% - 20px);
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -41,12 +49,13 @@ main p {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional box shadow for tables */
-    border-radius: 8px; /* Optional border radius for tables */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 /* Styling for table headers and cells */
-.table th, .table td {
+.table th,
+.table td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
@@ -54,16 +63,17 @@ main p {
 
 /* Background color for table headers */
 .table th {
-    background-color: #f2f2f2; /* Optional background color for headers */
+    background-color: #0d96b4;
+    color: black;
 }
 
 /* Hover effect for table rows */
 .table tbody tr:hover {
-    background-color: #f5f5f5; /* Optional hover background color */
+    background-color: #f5f5f5;
 }
 
 /* Styling for search input */
-.search-input {
+#searchBar {
     width: 100%;
     padding: 8px;
     border: 1px solid #ddd;

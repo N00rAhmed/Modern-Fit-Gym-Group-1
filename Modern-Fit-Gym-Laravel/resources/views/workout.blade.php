@@ -38,16 +38,24 @@
 
         <div class="table-with-search">
             <table class="table">
-                <caption>Table 2</caption>
+                <caption>Workout</caption>
                 <tr>
-                    <th>Header 1</th>
-                    <th>Header 2</th>
-                    <th>Header 3</th>
+                    <th>Workout ID</th>
+                    <th>Staff ID</th>
+                    <th>Member ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Amount</th>
                 </tr>
                 <tr>
                     <td>Data 1</td>
                     <td>Data 2</td>
                     <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                    <td>Data 6</td>
                 </tr>
                 <!-- Add more rows as needed -->
             </table>
@@ -55,14 +63,14 @@
 
         <div class="table-with-search">
             <div class="search-container">
-                <input type="text" id="searchBar" name="searchBar" placeholder="Search Table 3">
+                <input type="text" id="searchBar" name="searchBar" placeholder="Search Members">
             </div>
             <table class="table">
-                <caption>Table 3</caption>
+                <caption>Members</caption>
                 <tr>
-                    <th>Header 1</th>
-                    <th>Header 2</th>
-                    <th>Header 3</th>
+                    <th>Member_ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
                 </tr>
                 <tr>
                     <td>Data 1</td>

@@ -13,10 +13,8 @@ class LoginController extends Controller
     {
         $memberData = new MembersModel();
         $staffData = new StaffModel();
-        $memberData->setColumns('Pin, Password');
-        $staffData->setColumns('Pin, Password');
-        $success = "Done";
-        $failure = "Failure";
+        $memberData->setColumns('MemberID, Pin, Password');
+        $staffData->setColumns('Staff_ID, Pin, Password');
 
         foreach($memberData->ReadData() as $PinAPass)
         {
@@ -32,7 +30,7 @@ class LoginController extends Controller
             if($PinAPass->Pin == $request->input('pin'))
             {
                 if(hash::check($request->input('password'), $PinAPass->Password)){
-                    return view::share('ID', $PinAPass->MemberID);
+                    return view::share('ID', $PinAPass->Staff_ID);
                 }
             };
         }
