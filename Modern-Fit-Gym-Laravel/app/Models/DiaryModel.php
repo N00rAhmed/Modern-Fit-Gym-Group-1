@@ -175,7 +175,6 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
         // Decrypt specific fields in each entry
         foreach ($data as $entry) {
             $entry->Date = Crypt::decrypt($entry->Date);
-
             $entry->Calorie_Intake = Crypt::decrypt($entry->Calorie_Intake);
             $entry->Supplement_Intake = Crypt::decrypt($entry->Supplement_Intake);
             $entry->Exercise = Crypt::decrypt($entry->Exercise);
@@ -200,7 +199,6 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
 
         foreach ($data as $entry) {
             $entry->Date = Crypt::decrypt($entry->Date);
-
             $entry->Calorie_Intake = Crypt::decrypt($entry->Calorie_Intake);
             $entry->Supplement_Intake = Crypt::decrypt($entry->Supplement_Intake);
             $entry->Exercise = Crypt::decrypt($entry->Exercise);
