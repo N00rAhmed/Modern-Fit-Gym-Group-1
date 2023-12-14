@@ -16,13 +16,12 @@
         <div class="input">
             <form action="{{ route('diary.submit') }}" method="post">
                 @csrf
-                <input type="date" name="date" id="date" placeholder="Date" />
+                <input type="text" name="date" id="date" placeholder="Date" />
                 <input type="text" name="calorie_intake" id="calorie_intake" placeholder="Calorie Intake" />
                 <input type="text" name="supplement_intake" id="supplement_intake" placeholder="Supplement Intake" />
                 <input type="text" name="exercise" id="exercise" placeholder="Exercise" />
                 <input type="text" name="daily_duration" id="daily_duration" placeholder="Daily Duration" />
                 <input type="text" name="notes" id="notes" placeholder="Notes" />
-                <br />
                 <button type="submit" class="coloured-button">Add</button>
             </form>
         </div>
@@ -64,4 +63,5 @@
     @include('footer')
     @endsection
 </body>
+
 </html>
