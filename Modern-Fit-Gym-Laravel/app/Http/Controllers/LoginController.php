@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
 use App\Models\MembersModel;
 use App\Models\StaffModel;
 
@@ -21,7 +22,7 @@ class LoginController extends Controller
             if($PinAPass->Pin == $request->input('pin'))
             {
                 if(Hash::check($request->input('password'), $PinAPass->Password)){
-                    return view::share('ID', $PinAPass->MemberID);
+               
                 }
             };
         }
@@ -35,4 +36,6 @@ class LoginController extends Controller
             };
         }
     }
+
+
 }
