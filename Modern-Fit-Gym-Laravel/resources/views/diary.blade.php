@@ -60,6 +60,7 @@
             </tbody>
         </table>
     </main>
+    @include('footer')
     @endsection
 </body>
 
