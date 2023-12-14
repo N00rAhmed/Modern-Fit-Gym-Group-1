@@ -19,12 +19,11 @@ class RegistrationController extends Controller
     }
     
 
-    public function createDiaryData(Request $request)
+    public function RegisterAccount(Request $request)
     {
         $RegistrationData = new RegistrationModel();
         $RegistrationData->CreateData($request);
-        return redirect('/login')->with('success', 'Registration successful! Please log in.');
-        /*
+        //return redirect('/login')->with('success', 'Registration successful! Please log in.');
         $memberData = new MembersModel();
         $staffData = new StaffModel();
         $memberData->setColumns('Pin');
@@ -69,7 +68,6 @@ class RegistrationController extends Controller
 
         // Optionally, you can redirect the user after successful registration
         return redirect('/login')->with('success', 'Registration successful! Please log in.');
-        */
     }
 
 }

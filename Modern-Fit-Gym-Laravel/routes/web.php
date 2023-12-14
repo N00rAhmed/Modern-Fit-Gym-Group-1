@@ -60,7 +60,7 @@ Route::get('/register', function () {
     return view('register');
 });
 // Route::get('/register', [RegistrationController::class, 'index']);
-Route::post('/register', [RegistrationController::class, 'createDiaryData'])->name('register.submit');
+Route::post('/register', [RegistrationController::class, 'registerAccount'])->name('register.submit');
 
 Route::get('/member', function () {
     return view('member');
