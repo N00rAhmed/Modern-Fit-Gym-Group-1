@@ -32,15 +32,8 @@ tr:nth-child(even) {
     <title>Regime</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
-            <h2>Modern FIT Gym Trainer Page</h2>
-            <a href="/trainer">Trainer Home</a>
-            <a href="/viewDiary">View Diary</a>
-            <a href="/regime">Regime (crud functionality)</a>
-        </nav>
-    </header>
+@extends('nav')
+    @section('content')
 
     <main>
         <h1>Yo Trainer this is Regime (CRUD Operation)</h1>
@@ -108,5 +101,6 @@ tr:nth-child(even) {
     <footer>
 
     </footer>
+    @endsection
 </body>
 </html>
