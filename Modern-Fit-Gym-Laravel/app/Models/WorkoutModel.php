@@ -6,12 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
-
 use App\Models\Interfaces\CRUDInterface;
-use App\Models\Interfaces\EncryptionInterface;
 use App\Models\Interfaces\Subject;
 
-class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, Subject
+class WorkoutModel extends Model implements CRUDInterface, Subject
 {
     private $WorkoutID = [2];
     private $StaffID = 4;
@@ -163,7 +161,6 @@ class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, 
     
         return ['data' => $data, 'updatedData' => $updatedData];
     }
-    
     
     public function DeleteData(){
 
