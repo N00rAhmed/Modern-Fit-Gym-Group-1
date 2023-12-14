@@ -217,9 +217,6 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
     public function DeleteData(){
 
     }
-    public function Encryption(){
-
-    }
 
 
 }

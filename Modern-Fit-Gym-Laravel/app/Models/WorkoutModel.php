@@ -164,12 +164,8 @@ class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, 
         return ['data' => $data, 'updatedData' => $updatedData];
     }
     
-
-    public function DeleteData(){
-
-    }
     
-    public function Encryption(){
+    public function DeleteData(){
 
     }
 

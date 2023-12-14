@@ -102,9 +102,6 @@ class StaffModel extends Model implements CRUDInterface, EncryptionInterface, Ob
     public function DeleteData(){
 
     }
-    public function Encryption(){
-
-    }
     public function UpdateOb(){
 
     }

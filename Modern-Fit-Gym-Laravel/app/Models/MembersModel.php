@@ -103,9 +103,6 @@ class MembersModel extends Model implements CRUDInterface, EncryptionInterface, 
     public function DeleteData(){
 
     }
-    public function Encryption(){
-
-    }
     public function UpdateOb(){
 
     }
