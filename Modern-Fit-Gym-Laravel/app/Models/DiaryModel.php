@@ -194,6 +194,9 @@ class DiaryModel extends Model implements CRUDInterface
         
     public function ReadData(){
         // $data = DB::select('select * from Diary');
+        // make statemetn or method to have it so that depending which user is logged in, 
+        // it uses the member id  to show the specific data that that user has created which is assigned to their member id
+        // u can maybe do this with sql statmet
         $data = DB::table('Diary')->get()->toArray();
 
         foreach ($data as $entry) {

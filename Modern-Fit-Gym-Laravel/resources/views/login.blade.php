@@ -47,7 +47,13 @@
     </fieldset>
   </form>
 </main>
-@include('footer')
+
+<footer>
+
+</footer>
+
+
+
    @endsection
 
 </body>

@@ -7,6 +7,7 @@ use App\Http\Controllers\DiaryController;
 use App\Http\Controllers\WorkoutController;
 use App\Http\Models\DiaryModel;
 use App\Http\Models\Interfaces\SearchFunctionInterface;
+use App\Providers;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ use App\Http\Models\Interfaces\SearchFunctionInterface;
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 //Checks login details
 Route::post('/login', [LoginController::class, 'loginCheck'])->name('login.submit');
