@@ -12,7 +12,7 @@
 <body>
 @extends('nav')
     @section('content')
-    
+
     <main>
         <h1>Welcome Member</h1>
         <div class="cards">
@@ -21,7 +21,7 @@
             <div class="card"><a href="/workout">View My Workout plan</a></div>
             <div class="card"><a href="/nutritional">Nutritional Information</a></div>
             <div class="card"><a href="/plan">View my Nutritional Plan</a></div>
-            
+
         </div>
 
         <!-- <div class="regime-container">
