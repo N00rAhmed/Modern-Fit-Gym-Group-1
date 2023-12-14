@@ -20,7 +20,7 @@ class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, 
     private $ExcerciseType = "excersise type";
     private $Description = ["description"];
     private $Amount = [211];
-    private $ObserverList = "?observers";
+    private $ObserverList = [];
 
 
     public function getWorkoutID()
@@ -175,17 +175,16 @@ class WorkoutModel extends Model implements CRUDInterface, EncryptionInterface, 
 
     public function NotifyObserver(){
         foreach ($observerList as $ob){
-            ob->UpdateOb();
+            $ob->UpdateOb();
         }
     }
     public function RegisterObserver($class){
-        $ObserverList = ['MembersModel', 'StaffModel'];
+        $ObserverList[] = $class;
     }
-    public function RemoveObserver(){
-        $ObserverList = [];
+    public function RemoveObserver($class){
+        $keyOfOb = array_search($class, $observerList);
+        unset($ObserverList[$keyOfOb]);
     }
-
-    
 }
 
 
