@@ -24,7 +24,7 @@
 
     <main>
         <div class="welcome">
-            <h1><strong>Welcome to Modern Fit Gym etc!</strong></h1>
+            <h1><strong>Welcome to Modern Fit Gym!</strong></h1>
         </div>
         <div class="infoContainer">
             <div class="info">
