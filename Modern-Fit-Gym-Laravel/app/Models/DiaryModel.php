@@ -5,12 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
 use App\Models\Interfaces\CRUDInterface;
-use App\Models\Interfaces\EncryptionInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 
 
-class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
+class DiaryModel extends Model implements CRUDInterface
 // class Diary extends Model
 {
     use HasFactory;
@@ -195,6 +194,9 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
         
     public function ReadData(){
         // $data = DB::select('select * from Diary');
+        // make statemetn or method to have it so that depending which user is logged in, 
+        // it uses the member id  to show the specific data that that user has created which is assigned to their member id
+        // u can maybe do this with sql statmet
         $data = DB::table('Diary')->get()->toArray();
 
         foreach ($data as $entry) {
@@ -215,9 +217,6 @@ class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
 
     }
     public function DeleteData(){
-
-    }
-    public function Encryption(){
 
     }
 
