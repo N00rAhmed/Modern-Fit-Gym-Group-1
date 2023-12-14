@@ -5,12 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
 use App\Models\Interfaces\CRUDInterface;
-use App\Models\Interfaces\EncryptionInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 
 
-class DiaryModel extends Model implements CRUDInterface, EncryptionInterface
+class DiaryModel extends Model implements CRUDInterface
 // class Diary extends Model
 {
     use HasFactory;
