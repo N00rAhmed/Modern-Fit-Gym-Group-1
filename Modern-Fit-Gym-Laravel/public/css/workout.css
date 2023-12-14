@@ -95,3 +95,7 @@ legend {
 .button:hover {
     background-color: #45a049;
 }
+
+.table input {
+    display: none;
+}

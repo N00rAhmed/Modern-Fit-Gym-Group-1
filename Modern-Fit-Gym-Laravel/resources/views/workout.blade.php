@@ -37,49 +37,53 @@
         </fieldset>
 
         <div class="table-with-search">
-            <table class="table">
-                <caption>Workout</caption>
-                <tr>
-                    <th>Workout ID</th>
-                    <th>Staff ID</th>
-                    <th>Member ID</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Description</th>
-                    <th>Amount</th>
-                </tr>
-                <tr>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
-                    <td>Data 4</td>
-                    <td>Data 5</td>
-                    <td>Data 6</td>
-                    <td>Data 6</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </table>
-        </div>
+    <form action="workout_process.php" method="post">
+        <table class="table">
+            <caption>Workout</caption>
+            <tr>
+                <th>Member ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="member_id" value="Data 1"></td>
+                <td><input type="text" name="name" value="Data 2"></td>
+                <td><input type="text" name="type" value="Data 3"></td>
+                <td><input type="text" name="description" value="Data 4"></td>
+                <td><input type="text" name="amount" value="Data 5"></td>
+            </tr>
+            <tr>
+                <td colspan="5"><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
 
-        <div class="table-with-search">
-            <div class="search-container">
-                <input type="text" id="searchBar" name="searchBar" placeholder="Search Members">
-            </div>
-            <table class="table">
-                <caption>Members</caption>
-                <tr>
-                    <th>Member_ID</th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                </tr>
-                <tr>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </table>
+<div class="table-with-search">
+    <form action="members_process.php" method="post">
+        <div class="search-container">
+            <input type="text" id="searchBar" name="searchBar" placeholder="Search Members">
         </div>
+        <table class="table">
+            <caption>Members</caption>
+            <tr>
+                <th>Member_ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="member_id" value="Data 1"></td>
+                <td><input type="text" name="first_name" value="Data 2"></td>
+                <td><input type="text" name="last_name" value="Data 3"></td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
     </div>
     </div>
     </main>
