@@ -23,7 +23,11 @@ class LoginController extends Controller
             {
                 if(Hash::check($request->input('password'), $PinAPass->Password)){
                     session(['ID' => $PinAPass->MemberID]);
+<<<<<<< HEAD
                     return view('login', ['ID' => $PinAPass->MemberID]);
+=======
+                    return view('login', ['MID' => $PinAPass->MemberID]);
+>>>>>>> e334092f34ad5424796925c7f8e0bab2f3b2e6d7
                 }
             };
         }
@@ -33,7 +37,11 @@ class LoginController extends Controller
             {
                 if(hash::check($request->input('password'), $PinAPass->Password)){
                     session(['ID' => $PinAPass->Staff_ID]);
+<<<<<<< HEAD
                     return view('login', ['ID' => $PinAPass->Staff_ID]);
+=======
+                    return view('login', ['SID' => $PinAPass->Staff_ID]);
+>>>>>>> e334092f34ad5424796925c7f8e0bab2f3b2e6d7
                 }
             };
         }

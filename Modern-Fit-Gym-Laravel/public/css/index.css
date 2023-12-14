@@ -66,6 +66,7 @@ main p {
         padding: 1.5%;
         width: auto;
         height: auto;
+        margin-bottom: 8px;
     }
 }
 
@@ -153,7 +154,7 @@ div.gallery {
 }
 
 div.gallery:hover {
-    border: 1px solid #777;
+    border: 1px solid #41c4e0;
 }
 
 div.gallery img {

@@ -17,13 +17,10 @@
         <h1>Welcome Member</h1>
         <div class="cards">
 
-            <div class="card1"><a href="/diary">Go to My diary</a></div> 
-
-            <div class="card3"><a href="/workout">View My Workout plan</a></div>
-            
-            <div class="card2"><a href="/nutritional">Nutritional Information</a></div>
-
-            <div class="card4"><a href="/plan">View my Nutritional Plan</a></div>
+            <div class="card"><a href="/diary">Go to My diary</a></div> 
+            <div class="card"><a href="/workout">View My Workout plan</a></div>
+            <div class="card"><a href="/nutritional">Nutritional Information</a></div>
+            <div class="card"><a href="/plan">View my Nutritional Plan</a></div>
             
         </div>
 
@@ -46,12 +43,19 @@
     <footer>
 
     </footer>
+<<<<<<< HEAD
 
     <?php
     $value = session()->get('ID');
     var_dump($value)
     ?>
 
+=======
+    <?php
+    $value = session()->get('ID');
+    var_dump($value);
+    ?>
+>>>>>>> e334092f34ad5424796925c7f8e0bab2f3b2e6d7
     @endsection 
 </body>
 </html>
