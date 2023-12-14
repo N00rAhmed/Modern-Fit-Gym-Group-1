@@ -43,19 +43,10 @@
     <footer>
 
     </footer>
-<<<<<<< HEAD
-
-    <?php
-    $value = session()->get('ID');
-    var_dump($value)
-    ?>
-
-=======
     <?php
     $value = session()->get('ID');
     var_dump($value);
     ?>
->>>>>>> e334092f34ad5424796925c7f8e0bab2f3b2e6d7
     @endsection 
 </body>
 </html>
