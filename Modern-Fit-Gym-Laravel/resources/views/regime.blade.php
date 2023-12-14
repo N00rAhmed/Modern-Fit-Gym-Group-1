@@ -36,12 +36,9 @@ tr:nth-child(even) {
     @section('content')
 
     <main>
-        <h1>Yo Trainer this is Regime (CRUD Operation)</h1>
+        <h1>Assign Regime</h1>
 
-        <h2>Regime Nutritional Plan + Exercise Plan</h2>
-        <p>make nutrion plan be on left side and excerise plan be on right side. try not to make it in columns</p>
-
-        <h2>Nutritional Plan</h2>
+        <!-- <h2>Nutritional Plan</h2>
 
 
             <input type="text" name="name" id="name" placeholder="name" />
@@ -50,51 +47,93 @@ tr:nth-child(even) {
             <input type="text" name="fat" id="fat" placeholder="fat" />
             <input type="text" name="sugar" id="sugar" placeholder="sugar" />
             <input type="text" name="vitamins" id="vitamins" placeholder="vitamins" />
-            <button type="submit">Create Nutrition</button>
-
-        <h2>Workout Plan</h2>
-        <form action="{{ route('workout.submit') }}" method="post">
+            <button type="submit">Create Nutrition</button> -->
+            <div class="input">
+    <fieldset>
+        <legend>Add Workout</legend>
+        <form action="" method="post" class="input-row">
             @csrf <!-- {{ csrf_field() }} -->
-
-            <input type="text" name="exercise_name" id="exercise_name" placeholder="exercise name" />
-            <input type="text" name="exercise_type" id="exercise_type" placeholder="exercise type" />
-            <input type="text" name="description" id="description" placeholder="description" />
-            <input type="text" name="amount" id="amount" placeholder="amount" />
-            <button type="submit">Create Workout</button>
+            <div class="input-fields">
+                <input type="number" name="Member_Id" id="Member" placeholder="Member ID" />
+                <input type="text" name="Exercise_Name" id="Exercise_Name" placeholder="Name" />
+                <input type="text" name="Exercise_Type" id="Exercise_Type" placeholder="Type" />
+                <input type="text" name="Description" id="Description" placeholder="Description" />
+                <input type="number" name="Amount" id="Amount" placeholder="Amount" />
+            </div>
+            <button type="submit" class="coloured-button">Create Workout</button>
         </form>
+    </fieldset>
+</div>
 
 
-<!-- Your existing table structure -->
-<!-- Your existing table structure -->
-<table>
-  <!-- ... -->
-  <tbody>
-    @if(is_array($data) || is_object($data))
-        @foreach ($data as $data1)
-            <!-- Edit form -->
+        
+        <table>
+            <thead>
             <tr>
-                <td colspan="8">
-                    <form action="{{ route('workout.update', ['workoutID' => $data1->Workout_ID]) }}" method="post">
-                        @csrf
-                        <!-- Input fields for editing -->
-                        <input type="text" name="exercise_name" value="{{ $data1->Exercise_Name }}" />
-                        <input type="text" name="exercise_type" value="{{ $data1->Excercise_Type }}" />
-                        <input type="text" name="description" value="{{ $data1->Description }}" />
-                        <input type="text" name="amount" value="{{ $data1->Amount }}" />
-                        <button type="submit">Update</button>
-                    </form>
-                </td>
-            </tr>
-        @endforeach
-    @else
-        <tr>
-            <td colspan="8">No data available</td>
-        </tr>
-    @endif
-  </tbody>
-</table>
+                    <th>Workout_ID</th>
+                    <th>Staff_ID</th>
+                    <th>Member_ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+                        <tbody>
+                @if(is_array($data) || is_object($data))
+                @foreach ($data as $data1)
+                <tr>
+                    <td>{{ $data1->Workout_ID }}</td>
+                    <td>{{ $data1->Staff_ID }}</td>
+                    <td>{{ $data1->Member_ID }}</td>
+                    <td>{{ $data1->Exercise_Name }}</td>
+                    <td>{{ $data1->Exercise_Type }}</td>
+                    <td>{{ $data1->Description }}</td>
+                    <td>{{ $data1->Amount }}</td>
+                </tr>
+                @endforeach
+                @else
+                <tr>
+                    <td colspan="8">No data available</td>
+                </tr>
+                @endif
+            </tbody>
 
+        </table>
+        <br />
 
+        <table>
+        <thead>
+            <tr>
+                    <th>Member_ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Date of Birth</th>
+                    <th>Address</th>
+                    <th>Phone number</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+                        <tbody>
+                @if(is_array($data) || is_object($data))
+                @foreach ($data as $data1)
+                <tr>
+                    <td>{{ $data1->MemberID }}</td>
+                    <td>{{ $data1->First_Name }}</td>
+                    <td>{{ $data1->Last_Name }}</td>
+                    <td>{{ $data1->DOB }}</td>
+                    <td>{{ $data1->Address }}</td>
+                    <td>{{ $data1->Phone_Number }}</td>
+                    <td>{{ $data1->Email }}</td>
+                </tr>
+                @endforeach
+                @else
+                <tr>
+                    <td colspan="8">No data available</td>
+                </tr>
+                @endif
+            </tbody>
+        </table>
 
     </main>
 
