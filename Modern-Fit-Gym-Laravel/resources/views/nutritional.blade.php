@@ -15,8 +15,7 @@
     <main>
 
     </main>
-
-
+    @include('footer')
     @endsection
 
 </body>

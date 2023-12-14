@@ -39,10 +39,7 @@
             <h2>Nutrional Information</h2>
         </div> -->
     </main>
-
-    <footer>
-
-    </footer>
+    @include('footer')
     @endsection 
 </body>
 </html>

@@ -36,6 +36,7 @@
             <a href="/nutritional" class="navMenu">Nutritional</a>
             <a href="/login" class="navMenu">Login</a>
             <a href="/contact" class="navMenu">Contact</a>
+            <a href="/" class="navMenu">Logout</a>
             </div>
         </nav>
 </header> 

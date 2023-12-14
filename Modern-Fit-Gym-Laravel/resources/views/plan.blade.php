@@ -10,14 +10,7 @@
 
 </head>
 <body>
-    <header>
-        <nav>
-            <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" />
-            <h1>View my Nutritional Plan</h1>
-            <a href="/member">Go back</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </header>
+
 
     <main>
 
