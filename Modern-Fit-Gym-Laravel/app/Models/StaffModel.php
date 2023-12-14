@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Interfaces\CRUDInterface;
-use App\Models\Interfaces\EncryptionInterface;
 use App\Models\Interfaces\Observer;
 
-class StaffModel extends Model implements CRUDInterface, EncryptionInterface, Observer
+class StaffModel extends Model implements CRUDInterface, Observer
 {
     use HasFactory;
 
