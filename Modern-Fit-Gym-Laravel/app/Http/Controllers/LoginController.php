@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
 use App\Models\MembersModel;
 use App\Models\StaffModel;
 
@@ -25,7 +24,7 @@ class LoginController extends Controller
                     session(['MID' => $PinAPass->MemberID]);
                     return view('login', ['MID' => $PinAPass->MemberID]);
                 }
-            };
+            }
         }
         foreach($staffData->ReadData() as $PinAPass)
         {
@@ -35,8 +34,9 @@ class LoginController extends Controller
                     session(['SID' => $PinAPass->Staff_ID]);
                     return view('login', ['SID' => $PinAPass->Staff_ID]);
                 }
-            };
+            }
         }
+        return view('login');
     }
 
 
