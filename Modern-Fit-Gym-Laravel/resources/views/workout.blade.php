@@ -41,7 +41,9 @@
             </tr>
             <tr>
                 <?php
-                    if(is_array($data && count($data) != 0)){
+                    var_dump(session()->GET('MID'));
+                    var_dump($data);
+                    if(is_array($data) && count($data) != 0){
                         foreach ($data as $data){
                             echo "<tr>";
                             echo "<td>" . $data->Member_ID . "</td>";
