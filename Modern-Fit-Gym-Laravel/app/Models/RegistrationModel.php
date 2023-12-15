@@ -66,7 +66,7 @@ class RegistrationModel extends Model
         // Check if the entry already exists
         $existingData = DB::table('Members')
             ->where('Pin', $pin)
-
+            // Add more conditions as needed to uniquely identify a record
             ->first();
     
         if (!$existingData) {
@@ -85,5 +85,9 @@ class RegistrationModel extends Model
         }
     }
 
-
+    //protected $table = "Members";
+    //protected $fillable = ["First_Name", "Last_Name", "DOB", "Address", "Phone_Number", "Email", "Credit_Details", "Password"];
+    //protected $primaryKey = "MemberID";
+    //public $timestamps = false;
 }
+
