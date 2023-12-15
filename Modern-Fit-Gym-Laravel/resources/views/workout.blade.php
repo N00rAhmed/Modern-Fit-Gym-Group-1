@@ -41,14 +41,14 @@
             </tr>
             <tr>
                 <?php
-                    if(is_array($data) && is_object($data)){
+                    if(is_array($data && count($data) != 0)){
                         foreach ($data as $data){
                             echo "<tr>";
-                            echo "<td>{{ $data->Member_ID }}</td>";
-                            echo "<td>{{ $data->Exercise_Name }}</td>";
-                            echo "<td>{{ $data->Excercise_Type }}</td>";
-                            echo "<td>{{ $data->Description }}</td>";
-                            echo "<td>{{ $data->Amount }}</td>";
+                            echo "<td>" . $data->Member_ID . "</td>";
+                            echo "<td>" . $data->Exercise_Name . "</td>";
+                            echo "<td>" . $data->Excercise_Type . "</td>";
+                            echo "<td>" . $data->Description . "</td>";
+                            echo "<td>" . $data->Amount . "</td>";
                             echo "</tr>";
                         }
                     }

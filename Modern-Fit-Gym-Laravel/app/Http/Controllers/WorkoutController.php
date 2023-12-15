@@ -37,7 +37,7 @@ class WorkoutController extends Controller implements SearchFunctionInterface
             return view('workout', ['data' => $data]);
         }
         else{
-            return view('workout', ['data' => 'fail']);
+            return view('workout', ['data']);
         }
     }
 
