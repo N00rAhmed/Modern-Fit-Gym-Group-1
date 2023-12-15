@@ -22,7 +22,7 @@ class LoginController extends Controller
             if($PinAPass->Pin == $request->input('pin'))
             {
                 if(Hash::check($request->input('password'), $PinAPass->Password)){
-                    session(['MID' => $PinAPass->MemberID]);
+                    session(['ID' => $PinAPass->MemberID]);
                     return view('login', ['MID' => $PinAPass->MemberID]);
                 }
             };
@@ -32,7 +32,7 @@ class LoginController extends Controller
             if($PinAPass->Pin == $request->input('pin'))
             {
                 if(hash::check($request->input('password'), $PinAPass->Password)){
-                    session(['SID' => $PinAPass->Staff_ID]);
+                    session(['ID' => $PinAPass->Staff_ID]);
                     return view('login', ['SID' => $PinAPass->Staff_ID]);
                 }
             };

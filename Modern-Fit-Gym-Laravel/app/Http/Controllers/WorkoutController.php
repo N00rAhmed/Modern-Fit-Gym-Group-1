@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\WorkoutModel;
 use App\Models\Interfaces\SearchFunctionInterface;
 
+// class Workout extends SearchFunction
 class WorkoutController extends Controller implements SearchFunctionInterface
 {
     private $WorkoutID = 2;
@@ -16,25 +17,33 @@ class WorkoutController extends Controller implements SearchFunctionInterface
     private $Description = "description";
     private $Amount = 21;
 
+    // private function workoutController()
+    // {
+    //     // $WorkoutID = 2;
+    //     // $StaffID = 3;
+    //     // $MemberID = 4;
+    //     // $ExcerciseName = "run";
+    //     // $ExcerciseType = "excercise type";
+    //     // $Description = "description";
+    //     // $Amount = 21;
+    // }
 
     public function showWorkout(){
         $workoutData = new WorkoutModel();
         $data = $workoutData->ReadData();
         return view('regime', ['data' => $data]);
     }
-
     public function createWorkoutData(Request $request){
         $createdWorkoutData = new WorkoutModel();
         $data = $createdWorkoutData->CreateData($request);
         return view('regime', ['data' => $data]);
     }
-    
-    public function showWorkoutUser(){
-        $workoutData = new WorkoutModel();
-        $data = $workoutData->ReadData();
-        return view('workout', ['data' => $data]);
+    public function updateWorkoutData(Request $request, $workoutID){
+        $updatedWorkoutData = new WorkoutModel();
+        $data = $updatedWorkoutData->UpdateData($request, $workoutID);
+            return view('regime', ['data' => $data]);
     }
-
+        
 
     public function getWorkoutID()
     {

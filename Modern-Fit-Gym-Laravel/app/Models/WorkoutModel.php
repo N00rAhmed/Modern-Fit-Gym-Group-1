@@ -74,8 +74,6 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
 
 
     public function CreateData(Request $request){
-        $ID = $request->input('id');
-
         $Exercise_Name = Crypt::encrypt($request->input('exercise_name'));
         $Excercise_Type = Crypt::encrypt($request->input('exercise_type'));
         $Description = Crypt::encrypt($request->input('description'));
@@ -90,7 +88,6 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
         if (!$existingData) {
             // Insert data
             DB::table('Workout Plan')->insert([
-                'Member_ID' => $ID,
                 'Exercise_Name' => $Exercise_Name,
                 'Excercise_Type' => $Excercise_Type,
                 'Description' => $Description,
@@ -101,16 +98,14 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
         // Fetch all data after insertion (if needed)
         $data = DB::table('Workout Plan')->get()->toArray();
     
-        // Decrypt fields
+        // Decrypt specific fields in each entry
         foreach ($data as $entry) {
-            // $entry->ID = $entry->ID;
-
             $entry->Exercise_Name = Crypt::decrypt($entry->Exercise_Name);
             $entry->Excercise_Type = Crypt::decrypt($entry->Excercise_Type);
             $entry->Description = Crypt::decrypt($entry->Description);
             $entry->Amount = Crypt::decrypt($entry->Amount);
     
-            // Decrypt encrypted fields
+            // Decrypt other encrypted fields similarly
         }
     
         return $data;
@@ -121,19 +116,51 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
         $data = DB::table('Workout Plan')->get()->toArray();
 
         foreach ($data as $entry) {
-
             $entry->Exercise_Name = Crypt::decrypt($entry->Exercise_Name);
             $entry->Excercise_Type = Crypt::decrypt($entry->Excercise_Type);
             $entry->Description = Crypt::decrypt($entry->Description);
             $entry->Amount = Crypt::decrypt($entry->Amount);
     
+            // Decrypt other encrypted fields similarly
         }
+
 
         return $data;
 
     }
 
 
+    public function UpdateData(Request $request, $workoutID){
+        $Exercise_Name = Crypt::encrypt($request->input('exercise_name'));
+        $Excercise_Type = Crypt::encrypt($request->input('exercise_type'));
+        $Description = Crypt::encrypt($request->input('description'));
+        $Amount = Crypt::encrypt($request->input('amount'));
+    
+        // Update data based on Workout ID
+        $data = DB::table('Workout Plan')
+            ->where('Workout_ID', $workoutID)
+            ->update([
+                'Exercise_Name' => $Exercise_Name,
+                'Excercise_Type' => $Excercise_Type,
+                'Description' => $Description,
+                'Amount' => $Amount
+            ]);
+    
+        // Fetch updated data if needed
+        $updatedData = DB::table('Workout Plan')
+                        ->where('Workout_ID', $workoutID)
+                        ->first();
+    
+        if ($updatedData) {
+            $updatedData->Exercise_Name = Crypt::decrypt($updatedData->Exercise_Name);
+            $updatedData->Excercise_Type = Crypt::decrypt($updatedData->Excercise_Type);
+            $updatedData->Description = Crypt::decrypt($updatedData->Description);
+            $updatedData->Amount = Crypt::decrypt($updatedData->Amount);
+            // Decrypt other encrypted fields similarly
+        }
+    
+        return ['data' => $data, 'updatedData' => $updatedData];
+    }
     
     public function DeleteData(){
 
@@ -144,14 +171,18 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
             $ob->UpdateOb();
         }
     }
-
     public function RegisterObserver($class){
         $ObserverList[] = $class;
     }
-
     public function RemoveObserver($class){
         $keyOfOb = array_search($class, $observerList);
         unset($ObserverList[$keyOfOb]);
     }
-
 }
+
+
+
+
+// <!-- after done the coding from stuff from class diagarm then create tables in sqlit -->
+
+// <!-- After models and controllers, work on interfaces, then connect diffrent entity realtions together-->
