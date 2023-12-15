@@ -16,7 +16,13 @@
         <div class="input">
             <form action="{{ route('diary.submit') }}" method="post">
                 @csrf
-                <input type="date" name="date" id="date" placeholder="Date" />
+                <?php
+                $value = session()->get('MID');
+                if (isset($value)){
+                    echo "<input class='hide' type='text' name='id' id='id' value='" . $value . "'>";
+                }
+                ?>
+                <input type="text" name="date" id="date" placeholder="Date" />
                 <input type="text" name="calorie_intake" id="calorie_intake" placeholder="Calorie Intake" />
                 <input type="text" name="supplement_intake" id="supplement_intake" placeholder="Supplement Intake" />
                 <input type="text" name="exercise" id="exercise" placeholder="Exercise" />
@@ -28,8 +34,6 @@
         <table>
             <thead>
                 <tr>
-                    <th>Diary_ID</th>
-                    <th>Member_ID</th>
                     <th>Date</th>
                     <th>Calorie_Intake</th>
                     <th>Supplement_Intake</th>
@@ -42,8 +46,6 @@
                 @if(is_array($data) || is_object($data))
                 @foreach ($data as $data1)
                 <tr>
-                    <td>{{ $data1->Diary_ID }}</td>
-                    <td>{{ $data1->Member_ID }}</td>
                     <td>{{ $data1->Date }}</td>
                     <td>{{ $data1->Calorie_Intake }}</td>
                     <td>{{ $data1->Supplement_Intake }}</td>
