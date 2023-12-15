@@ -16,6 +16,7 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
 
     protected $fillable = [
         'WorkoutID',
+        'StaffID',
         'MemberID',
         'ExcerciseName',
         'ExcerciseType',
@@ -24,13 +25,13 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
         'Filter'
     ];
 
-    private $WorkoutID;
-    private $StaffID;
-    private $MemberID;
-    private $ExcerciseName;
-    private $ExcerciseType;
-    private $Description;
-    private $Amount;
+    protected $WorkoutID;
+    protected $StaffID;
+    protected $MemberID;
+    protected $ExcerciseName;
+    protected $ExcerciseType;
+    protected $Description;
+    protected $Amount;
     protected $Filter;
     private $ObserverList = [];
 
@@ -94,7 +95,8 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
 
 
     public function CreateData(Request $request){
-        $Member_ID = $request->input('id');
+        $StaffID = $request->input('idS');
+        $MemberID = $request->input('id');
         $Exercise_Name = Crypt::encrypt($request->input('exercise_name'));
         $Excercise_Type = Crypt::encrypt($request->input('exercise_type'));
         $Description = Crypt::encrypt($request->input('description'));
@@ -109,6 +111,7 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
         if (!$existingData) {
             // Insert data
             DB::table('Workout Plan')->insert([
+                'Staff_ID' => $StaffID,
                 'Member_ID' => $Member_ID,
                 'Exercise_Name' => $Exercise_Name,
                 'Excercise_Type' => $Excercise_Type,
