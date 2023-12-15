@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../Styles/trainer.css"> -->
     <link rel="stylesheet" href="{{ asset('../css/trainer.css') }}">
 
     <title>Trainer</title>
@@ -24,9 +23,6 @@
 
         <p>description for the trainer talkinf about saomthing generic in description. Maybe make font or text size of text bigger to make it look better</p>
 
-        <!-- <a href="./viewDiary.html">View Diary</a>
-        <br/>
-        <a href="./regime.html">Regime (crud functionality)</a> -->
     </main>
 
     <footer>

@@ -14,14 +14,6 @@
 
     <main>
     <div class="table-container">
-        <!-- <div class="table-with-search">
-            <table class="Form">
-                <caption>Form</caption>
-                <tr>
-                    <th>Header</th>
-                </tr>
-            </table>
-        </div> -->
         <fieldset>
         <legend>Form</legend>
         <div>
@@ -53,9 +45,38 @@
                 <td><input type="text" name="type" value="Data 3"></td>
                 <td><input type="text" name="description" value="Data 4"></td>
                 <td><input type="text" name="amount" value="Data 5"></td>
+
+                @if(is_array($data) || is_object($data))
+        @foreach ($data as $data1)
+        @if(is_array($data) || is_object($data))
+                @foreach ($data as $data1)
+                <tr>
+                <td>
+                    {{ $data1->Member_ID }}</td>
+                    <td>{{ $data1->Exercise_Name }}</td>
+                    <td>{{ $data1->Excercise_Type }}</td>
+                    <td>{{ $data1->Description }}</td>
+                    <td>{{ $data1->Amount }}</td>
+                </tr>
+                @endforeach
+                @else
+                <tr>
+                    <td colspan="8">No data available</td>
+                </tr>
+                @endif
+            </tbody>
+        </table>
+                    </form>
+                </td>
             </tr>
-            <tr>
-                <td colspan="5"><input type="submit" value="Submit"></td>
+        @endforeach
+    @else
+        <tr>
+            <td colspan="8">No data available</td>
+        </tr>
+    @endif
+
+
             </tr>
         </table>
     </form>
