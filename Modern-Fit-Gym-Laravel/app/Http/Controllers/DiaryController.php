@@ -40,7 +40,6 @@ class DiaryController extends Controller implements SearchFunctionInterface
     }
 
 
-// shift f9 for brakpints
 
     // Getter methods
     public function getMemberID()
@@ -120,10 +119,6 @@ class DiaryController extends Controller implements SearchFunctionInterface
 
     public function SearchFunction(){
 
-    }
-
-    // Model functionality and then instantiated in controller
-// route woud route to controller
-    
+    }    
 
 }

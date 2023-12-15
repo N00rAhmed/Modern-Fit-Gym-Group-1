@@ -16,7 +16,7 @@
         <h1>Welcome Admin</h1>
 
         <div>
-            <h2>(Decrypted in future) Account Data</h2>
+            <h2>Account Data</h2>
             <ul>
                    {{ $accounts }}
             </ul>

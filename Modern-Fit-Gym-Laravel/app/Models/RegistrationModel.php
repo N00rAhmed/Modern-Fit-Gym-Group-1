@@ -84,11 +84,5 @@ class RegistrationModel extends Model
             ]);
         }
     }
-
-    //protected $table = "Members";
-    //protected $fillable = ["First_Name", "Last_Name", "DOB", "Address", "Phone_Number", "Email", "Credit_Details", "Password"];
-    //protected $primaryKey = "MemberID";
-    //public $timestamps = false;
 }
-
 
