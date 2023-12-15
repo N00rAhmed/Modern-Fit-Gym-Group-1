@@ -90,5 +90,3 @@ class RegistrationModel extends Model
     //protected $primaryKey = "MemberID";
     //public $timestamps = false;
 }
-
-

@@ -130,37 +130,6 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
     }
 
 
-    public function UpdateData(Request $request, $workoutID){
-        $Exercise_Name = Crypt::encrypt($request->input('exercise_name'));
-        $Excercise_Type = Crypt::encrypt($request->input('exercise_type'));
-        $Description = Crypt::encrypt($request->input('description'));
-        $Amount = Crypt::encrypt($request->input('amount'));
-    
-        // Update data based on Workout ID
-        $data = DB::table('Workout Plan')
-            ->where('Workout_ID', $workoutID)
-            ->update([
-                'Exercise_Name' => $Exercise_Name,
-                'Excercise_Type' => $Excercise_Type,
-                'Description' => $Description,
-                'Amount' => $Amount
-            ]);
-    
-        // Fetch updated data if needed
-        $updatedData = DB::table('Workout Plan')
-                        ->where('Workout_ID', $workoutID)
-                        ->first();
-    
-        if ($updatedData) {
-            $updatedData->Exercise_Name = Crypt::decrypt($updatedData->Exercise_Name);
-            $updatedData->Excercise_Type = Crypt::decrypt($updatedData->Excercise_Type);
-            $updatedData->Description = Crypt::decrypt($updatedData->Description);
-            $updatedData->Amount = Crypt::decrypt($updatedData->Amount);
-            // Decrypt other encrypted fields similarly
-        }
-    
-        return ['data' => $data, 'updatedData' => $updatedData];
-    }
     
     public function DeleteData(){
 

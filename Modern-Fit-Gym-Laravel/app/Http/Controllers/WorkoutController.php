@@ -38,12 +38,12 @@ class WorkoutController extends Controller implements SearchFunctionInterface
         $data = $createdWorkoutData->CreateData($request);
         return view('regime', ['data' => $data]);
     }
-    public function updateWorkoutData(Request $request, $workoutID){
-        $updatedWorkoutData = new WorkoutModel();
-        $data = $updatedWorkoutData->UpdateData($request, $workoutID);
-            return view('regime', ['data' => $data]);
+    public function showWorkoutUser(){
+        $workoutData = new WorkoutModel();
+        $data = $workoutData->ReadData();
+        return view('regime', ['data' => $data]);
     }
-        
+
 
     public function getWorkoutID()
     {
