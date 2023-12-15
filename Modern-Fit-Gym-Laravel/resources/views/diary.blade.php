@@ -43,22 +43,30 @@
                 </tr>
             </thead>
             <tbody>
-                @if(is_array($data) || is_object($data))
-                @foreach ($data as $data1)
-                <tr>
-                    <td>{{ $data1->Date }}</td>
-                    <td>{{ $data1->Calorie_Intake }}</td>
-                    <td>{{ $data1->Supplement_Intake }}</td>
-                    <td>{{ $data1->Exercise }}</td>
-                    <td>{{ $data1->Daily_Duration }}</td>
-                    <td>{{ $data1->Notes }}</td>
-                </tr>
-                @endforeach
-                @else
-                <tr>
-                    <td colspan="8">No data available</td>
-                </tr>
-                @endif
+                <?php
+                if (is_array($data) && count($data) != 0){
+                    foreach ($data as $data){
+                        echo "<tr>";
+                        echo "<td>" . $data->Date  . "</td>";
+                        echo "<td>" . $data->Calorie_Intake . "</td>";
+                        echo "<td>" . $data->Supplement_Intake . "</td>";
+                        echo "<td>" . $data->Exercise . "</td>";
+                        echo "<td>" . $data->Daily_Duration . "</td>";
+                        echo "<td>" . $data->Notes . "</td>";
+                        echo "</tr>";
+                    }
+                }
+                else{
+                    echo "<tr>";
+                    echo "<td>No data available</td>";
+                    echo "<td>No data available</td>";
+                    echo "<td>No data available</td>";
+                    echo "<td>No data available</td>";
+                    echo "<td>No data available</td>";
+                    echo "<td>No data available</td>";
+                    echo "</tr>";
+                }
+                ?>
             </tbody>
         </table>
     </main>
