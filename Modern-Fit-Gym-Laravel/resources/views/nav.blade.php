@@ -16,7 +16,7 @@
             <?php
                 if (isset($_GET['logout'])){
                     if ($_GET['logout'] == true){
-                        session_unset();
+                        session()->flush();
                     }
                 }
             ?>
