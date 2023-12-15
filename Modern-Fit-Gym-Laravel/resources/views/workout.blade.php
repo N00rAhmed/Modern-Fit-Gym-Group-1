@@ -41,8 +41,6 @@
             </tr>
             <tr>
                 <?php
-                    var_dump(session()->GET('MID'));
-                    var_dump($data);
                     if(is_array($data) && count($data) != 0){
                         foreach ($data as $data){
                             echo "<tr>";
