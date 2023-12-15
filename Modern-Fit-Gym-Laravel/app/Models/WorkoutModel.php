@@ -107,7 +107,8 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
             ->where('Description', $Description)
             // Add more conditions as needed to uniquely identify a record
             ->first();
-    
+
+
         if (!$existingData) {
             // Insert data
             DB::table('Workout Plan')->insert([

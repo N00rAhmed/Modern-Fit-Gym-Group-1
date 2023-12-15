@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Interfaces\CRUDInterface;
 use App\Models\Interfaces\Observer;
+use Illuminate\Support\Facades\Mail;
 
 class StaffModel extends Model implements CRUDInterface, Observer
 {
@@ -105,7 +106,12 @@ class StaffModel extends Model implements CRUDInterface, Observer
 
     }
     public function SendEmail(){
-
+            // Send email when new data is inserted
+            Mail::send('mail', ['name' => 'piyumikablog'], function ($message) {
+                $message->to('tronn232003@gmail.com', 'Recipient Name')->subject('Subject of Email');
+                $message->from('noor.ahmed232003@outlook.com', 'Sender Name');
+            });
+            // implementation was halted due to time constraits
     }
 
 
