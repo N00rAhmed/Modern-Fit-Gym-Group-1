@@ -26,7 +26,6 @@ tr:nth-child(even) {
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../Styles/viewdiary.css"> -->
     <link rel="stylesheet" href="{{ asset('../css/viewdiary.css') }}">
 
     <title>View Diary</title>
@@ -67,7 +66,6 @@ tr:nth-child(even) {
         <td>{{ $data1->Exercise }}</td>
         <td>{{ $data1->Daily_Duration }}</td>
         <td>{{ $data1->Notes }}</td>
-                <!-- Rest of your table data -->
             </tr>
         @endforeach
     @else

@@ -44,14 +44,8 @@
         <input type="text" name="phone" placeholder="Phone Number" required/>
         <input type="email" name="email" placeholder="Email" required/>
         <input type="text" name="credit_details" placeholder="Credit Details" required/>
-        <!-- <input type="password" name="pin" placeholder="Pin" required/> pin will be generated for user and sent to their email which will be used for their login -->
         <input type="password" name="password" placeholder="password" required/>
-        
-        <!-- for diary sending and getting data we can maybe use ceaser cipher to encrypt data omin sql db and then decrypt when getting data -->
-         <!--or we can just use normal php encryption  -->
-         <!-- sqlite injection resistence potentially for security -->
-         <!-- later on may need to write documentation for someone else to use it locally -->
-         
+                 
       </div>
       <br />
       <div class="regbttn">

@@ -9,7 +9,6 @@
 <body>
     <footer>
         <p>&copy; 2023 Modern Fit Gym. All rights reserved.</p>
-        <!-- <a href="/contact">Contact Us</a> -->
     </footer>
 </body>
 

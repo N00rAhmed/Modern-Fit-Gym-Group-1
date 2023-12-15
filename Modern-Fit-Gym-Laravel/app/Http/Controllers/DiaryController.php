@@ -23,8 +23,15 @@ class DiaryController extends Controller implements SearchFunctionInterface
 
     public function showDiary(){
         $diaryData = new DiaryModel();
-        $data = $diaryData->ReadData();
-        return view('diary', ['data' => $data]);
+        $value = session()->Get('MID');
+        if (isset($value)){
+            $diaryData->setFilter($value);
+            $data = $diaryData->ReadData();
+            return view('diary', ['data' => $data]);
+        }
+        else{
+            return view('diary', ['data' => 'fail']);
+        }
     }
 
     public function createDiaryData(Request $request){

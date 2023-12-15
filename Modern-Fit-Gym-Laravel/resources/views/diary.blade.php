@@ -22,7 +22,11 @@
                     echo "<input class='hide' type='text' name='id' id='id' value='" . $value . "'>";
                 }
                 ?>
+<<<<<<< HEAD
                 <input type="date" name="date" id="date" placeholder="Date" />
+=======
+                <input type="text" name="date" id="date" placeholder="Date" />
+>>>>>>> 50d3add7e9a512723f6b5b0b5922150a5f067e73
                 <input type="text" name="calorie_intake" id="calorie_intake" placeholder="Calorie Intake" />
                 <input type="text" name="supplement_intake" id="supplement_intake" placeholder="Supplement Intake" />
                 <input type="text" name="exercise" id="exercise" placeholder="Exercise" />
