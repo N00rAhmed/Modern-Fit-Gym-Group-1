@@ -14,18 +14,6 @@ class DiaryModel extends Model implements CRUDInterface
 {
     use HasFactory;
 
-
-
-
-    // private $DiaryID = [6];
-    // private $MemberID = 5;
-    // private $Date = [4/12/2023];
-    // private $CalorieIntake = [32];
-    // private $SupplementIntake = "supplement intake";
-    // private $Excercise = ["excercise"];
-    // private $DailyDuration = [9];
-    // private $Notes = ["notes string array"];
-
     protected $fillable = [
         'MemberID',
         'Date',
@@ -33,7 +21,8 @@ class DiaryModel extends Model implements CRUDInterface
         'SupplementIntake',
         'Exercise',
         'DailyDuration',
-        'Notes'
+        'Notes',
+        'Filter'
     ];
 
     // Define the attributes
@@ -44,6 +33,8 @@ class DiaryModel extends Model implements CRUDInterface
     protected $Exercise;
     protected $DailyDuration;
     protected $Notes;
+    protected $Filter;
+
 
 
 
@@ -73,6 +64,9 @@ class DiaryModel extends Model implements CRUDInterface
     public function getNotes(){
         return $this->Notes;
     }
+    public function getFilter(){
+        return $this->Fitler;
+    }
 
     // Setter methods
     public function setDiaryID($diary_id){
@@ -99,43 +93,12 @@ class DiaryModel extends Model implements CRUDInterface
     public function setNotes($notes){
         $this->Notes = $notes;
     }
-
-
-
-
-    // public function CreateData(Request $request){
-    //     $date = $request->input('date');
-    //     $calorieIntake = $request->input('calorie_intake');
-    //     $supplementIntake = $request->input('supplement_intake');
-    //     $exercise = $request->input('exercise');
-    //     $dailyDuration = $request->input('daily_duration');
-    //     $notes = $request->input('notes');
-    
-    //     // Check if the entry already exists
-    //     $existingData = DB::table('Diary')
-    //         ->where('Notes', $notes)
-    //         // Add more conditions as needed to uniquely identify a record
-    //         ->first();
-    
-    //     if (!$existingData) {
-    //         // Insert data
-    //         DB::table('Diary')->insert([
-    //             'Date' => $date,
-    //             'Calorie_Intake' => $calorieIntake,
-    //             'Supplement_Intake' => $supplementIntake,
-    //             'Exercise' => $exercise,
-    //             'Daily_Duration' => $dailyDuration,
-    //             'Notes' => $notes
-    //         ]);
-    //     }
-    
-    //     // Fetch all data after insertion (if needed)
-    //     $data = DB::table('Diary')->get()->toArray(); // Fetch all data and convert to array
-    
-    //     return $data;
-    // }
+    public function setFilter($Filter){
+        $this->Filter = $Filter;
+    }
 
     public function CreateData(Request $request){
+        $MemberID = $request->input('id');
         $date = Crypt::encrypt($request->input('date'));
         $calorieIntake = Crypt::encrypt($request->input('calorie_intake'));
         $supplementIntake = Crypt::encrypt($request->input('supplement_intake'));
@@ -144,10 +107,6 @@ class DiaryModel extends Model implements CRUDInterface
         $notes = Crypt::encrypt($request->input('notes'));
 
         // Encrypt other sensitive fields similarly
-        
-        // $exercise = $request->input('exercise');
-        // $dailyDuration = $request->input('daily_duration');
-        // $notes = $request->input('notes');
     
         // Check if the entry already exists
         $existingData = DB::table('Diary')
@@ -158,6 +117,7 @@ class DiaryModel extends Model implements CRUDInterface
         if (!$existingData) {
             // Insert data
             DB::table('Diary')->insert([
+                'Member_ID' => $MemberID,
                 'Date' => $date,
                 'Calorie_Intake' => $calorieIntake,
                 'Supplement_Intake' => $supplementIntake,
@@ -169,7 +129,7 @@ class DiaryModel extends Model implements CRUDInterface
     
         // Fetch all data after insertion (if needed)
 
-        $data = DB::table('Diary')->get()->toArray();
+        $data = DB::table('Diary')->where('Member_ID', '=', $request->input('id'))->get()->toArray();
 
         // Decrypt specific fields in each entry
         foreach ($data as $entry) {
@@ -197,7 +157,7 @@ class DiaryModel extends Model implements CRUDInterface
         // make statemetn or method to have it so that depending which user is logged in, 
         // it uses the member id  to show the specific data that that user has created which is assigned to their member id
         // u can maybe do this with sql statmet
-        $data = DB::table('Diary')->get()->toArray();
+        $data = DB::table('Diary')->where('Member_ID', '=', $this->Filter)->get()->toArray();
 
         foreach ($data as $entry) {
             $entry->Date = Crypt::decrypt($entry->Date);
