@@ -29,10 +29,17 @@
             <a href="/nutritional" class="navMenu">Nutritional</a>
             <a href="/login" class="navMenu">Login</a>
             <a href="/contact" class="navMenu">Contact</a>
-
             <?php
                 $MID = Session()->Get('MID');
                 $SID = Session()->Get('SID');
+                if (isset($MID)){
+                    echo "<a href='/diary' class='navMenu'>Diary</a>";
+                    echo "<a href='/workout' class='navMenu'>Workout</a>";
+                }
+                elseif(Isset($SID)){
+                    echo "<a href='/Regime' class='navMenu'>Regime</a>";
+                    echo "<a href='/Member' class='navMenu'>View Members</a>";
+                }
                 if (isset($MID)){
                     echo '<a href="/?logout=true" class="navMenu" id="logout">Logout</a>';
                 }
