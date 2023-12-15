@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
@@ -11,62 +12,81 @@ use App\Models\Interfaces\Subject;
 
 class WorkoutModel extends Model implements CRUDInterface, Subject
 {
-    private $WorkoutID = [2];
-    private $StaffID = 4;
-    private $MemberID = 7;
-    private $ExcerciseName = ["excersise name"];
-    private $ExcerciseType = "excersise type";
-    private $Description = ["description"];
-    private $Amount = [211];
+    use HasFactory;
+
+    protected $fillable = [
+        'WorkoutID',
+        'MemberID',
+        'ExcerciseName',
+        'ExcerciseType',
+        'Description',
+        'Amount',
+        'Filter'
+    ];
+
+    private $WorkoutID;
+    private $StaffID;
+    private $MemberID;
+    private $ExcerciseName;
+    private $ExcerciseType;
+    private $Description;
+    private $Amount;
+    protected $Filter;
     private $ObserverList = [];
 
 
     public function getWorkoutID()
     {
-        return $WorkoutID;
+        return $this->WorkoutID;
     }
     public function getStaffID(){
-        return $StaffID;
+        return $this->StaffID;
     }
     public function getMemberID(){
-        return $MemberID;
+        return $this->MemberID;
     }
     public function getExcerciseName(){
-        return $ExcerciseName;
+        return $this->ExcerciseName;
     }
     public function getExcerciseType(){
-        return $ExcerciseType;
+        return $this->ExcerciseType;
     }
     public function getDescription(){
-        return $Description;
+        return $this->Description;
     }
     public function getAmount(){
-        return $Amount;
+        return $this->Amount;
+    }
+    public function getFilter(){
+        return $this->Filter;
     }
     public function getObserverList(){
-        return $ObserverList;
+        return $this->ObserverList;
     }
     
     public function setWorkoutID($workout_id){
-        $WorkoutID = $workout_id;
+        $this->WorkoutID = $workout_id;
     }
     public function setStaffID($staff_id){
-         $StaffID = $staff_id;
+        $this->StaffID = $staff_id;
     }
     public function setMemberID($member_id){
-        $MemberID = $member_id;
+        $this->MemberID = $member_id;
     }
     public function setExcerciseName($excercise_name){
-        $ExcerciseName = $excercise_name;
+        $this->ExcerciseName = $excercise_name;
     }
     public function setExcerciseType($excercise_type){
-        $ExcerciseType = $excercise_type;
+        $this->ExcerciseType = $excercise_type;
     }
     public function setDescription($description){
-        $Description = $description;
+        $this->Description = $description;
     }
     public function setAmount($amount){
-        $Amount = $amount;
+        $this->Amount = $amount;
+    }
+    public function setFilter($Filter){
+        $this->Filter = $Filter;
     }
     public function setObserverList($observer_list){
         $ObserverList = $observer_list;
@@ -113,7 +133,7 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
 
 
     public function ReadData(){
-        $data = DB::table('Workout Plan')->get()->toArray();
+        $data = DB::table('Workout Plan')->where('Member_id', '=', $this->Filter)->get()->toArray();
 
         foreach ($data as $entry) {
             $entry->Exercise_Name = Crypt::decrypt($entry->Exercise_Name);

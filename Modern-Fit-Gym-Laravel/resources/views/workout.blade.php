@@ -40,41 +40,30 @@
                 <th>Amount</th>
             </tr>
             <tr>
-
-                @if(is_array($data) || is_object($data))
-        @foreach ($data as $data1)
-        @if(is_array($data) || is_object($data))
-                @foreach ($data as $data1)
-                <tr>
-                <td>
-                    {{ $data1->Member_ID }}</td>
-                    <td>{{ $data1->Exercise_Name }}</td>
-                    <td>{{ $data1->Excercise_Type }}</td>
-                    <td>{{ $data1->Description }}</td>
-                    <td>{{ $data1->Amount }}</td>
-                </tr>
-                @endforeach
-                @else
-                <tr>
-                    <td colspan="8">No data available</td>
-                </tr>
-                @endif
+                <?php
+                    if(is_array($data) && is_object($data)){
+                        foreach ($data as $data){
+                            echo "<tr>";
+                            echo "<td>{{ $data->Member_ID }}</td>";
+                            echo "<td>{{ $data->Exercise_Name }}</td>";
+                            echo "<td>{{ $data->Excercise_Type }}</td>";
+                            echo "<td>{{ $data->Description }}</td>";
+                            echo "<td>{{ $data->Amount }}</td>";
+                            echo "</tr>";
+                        }
+                    }
+                    else{
+                        echo "<tr>";
+                        echo "<td>No data available</td>";
+                        echo "<td>No data available</td>";
+                        echo "<td>No data available</td>";
+                        echo "<td>No data available</td>";
+                        echo "<td>No data available</td>";
+                        echo "</tr>";
+                    }
+                ?>
             </tbody>
         </table>
-                    </form>
-                </td>
-            </tr>
-        @endforeach
-    @else
-        <tr>
-            <td colspan="8">No data available</td>
-        </tr>
-    @endif
-
-
-            </tr>
-        </table>
-    </form>
 </div>
 
     </div>
