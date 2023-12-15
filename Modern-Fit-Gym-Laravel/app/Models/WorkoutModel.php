@@ -94,6 +94,7 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
 
 
     public function CreateData(Request $request){
+        $Member_ID = $request->input('id');
         $Exercise_Name = Crypt::encrypt($request->input('exercise_name'));
         $Excercise_Type = Crypt::encrypt($request->input('exercise_type'));
         $Description = Crypt::encrypt($request->input('description'));
@@ -108,6 +109,7 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
         if (!$existingData) {
             // Insert data
             DB::table('Workout Plan')->insert([
+                'Member_ID' => $Member_ID,
                 'Exercise_Name' => $Exercise_Name,
                 'Excercise_Type' => $Excercise_Type,
                 'Description' => $Description,
