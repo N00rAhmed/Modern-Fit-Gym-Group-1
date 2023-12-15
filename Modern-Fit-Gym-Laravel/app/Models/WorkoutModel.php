@@ -135,7 +135,12 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
 
 
     public function ReadData(){
-        $data = DB::table('Workout Plan')->where('Member_ID', '=', $this->Filter)->get()->toArray();
+        if (isset($Filter)){
+            $data = DB::table('Workout Plan')->where('Member_ID', '=', $this->Filter)->get()->toArray();
+        }
+        else{
+            $data = DB::table('Workout Plan')->get()->toArray();
+        }
 
         foreach ($data as $entry) {
             $entry->Exercise_Name = Crypt::decrypt($entry->Exercise_Name);
