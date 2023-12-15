@@ -1,11 +1,15 @@
+body {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
 footer {
     background-color: #0d96b4;
-    position: relative;
-    top: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px;
+    padding-bottom: 50px;
+    margin-top: 20px; /* Adjust the value as needed */
 }
 
 footer a {

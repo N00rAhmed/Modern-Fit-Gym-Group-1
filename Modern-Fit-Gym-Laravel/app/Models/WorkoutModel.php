@@ -113,7 +113,7 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
             // Insert data
             DB::table('Workout Plan')->insert([
                 'Staff_ID' => $StaffID,
-                'Member_ID' => $Member_ID,
+                'Member_ID' => $MemberID,
                 'Exercise_Name' => $Exercise_Name,
                 'Excercise_Type' => $Excercise_Type,
                 'Description' => $Description,

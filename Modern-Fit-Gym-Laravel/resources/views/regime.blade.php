@@ -35,9 +35,11 @@
             <input type="text" name="description" id="description" placeholder="Description" />
             <input type="text" name="amount" id="amount" placeholder="Amount" />
             </div>
-            <button type="submit" class="coloured-button">Create Workout</button>
-            <button type="submit" class="coloured-button">Update Workout</button>
-            <button type="submit" class="coloured-button">Delete Workout</button>
+            <div class="button-container">
+             <button type="submit" class="coloured-button">Create Workout</button>
+             <button type="" class="coloured-button">Update Workout</button>
+             <button type="" class="coloured-button">Delete Workout</button>
+            </div>
         </form>
     </fieldset>
 </div>
