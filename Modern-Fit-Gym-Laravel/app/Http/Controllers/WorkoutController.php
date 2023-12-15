@@ -17,16 +17,6 @@ class WorkoutController extends Controller implements SearchFunctionInterface
     private $Description = "description";
     private $Amount = 21;
 
-    // private function workoutController()
-    // {
-    //     // $WorkoutID = 2;
-    //     // $StaffID = 3;
-    //     // $MemberID = 4;
-    //     // $ExcerciseName = "run";
-    //     // $ExcerciseType = "excercise type";
-    //     // $Description = "description";
-    //     // $Amount = 21;
-    // }
 
     public function showWorkout(){
         $workoutData = new WorkoutModel();

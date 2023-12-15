@@ -20,7 +20,7 @@
                     }
                 }
             ?>
-            <!-- <img class="navbar-logo" src="../Images/logo.png" height="100px" width="100px" /> -->
+            
             <a href="/"><img class="navbar-logo" src="{{ asset('Images/Image2.png') }}" height="100px" width="100px"/></a>
 
             <h2 class="header">Modern Fit Gym</h2>

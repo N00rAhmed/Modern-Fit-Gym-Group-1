@@ -106,7 +106,7 @@ class DiaryModel extends Model implements CRUDInterface
         $dailyDuration = Crypt::encrypt($request->input('daily_duration'));
         $notes = Crypt::encrypt($request->input('notes'));
 
-        // Encrypt other sensitive fields similarly
+        // Encrypt fields 
     
         // Check if the entry already exists
         $existingData = DB::table('Diary')
@@ -140,23 +140,17 @@ class DiaryModel extends Model implements CRUDInterface
             $entry->Daily_Duration = Crypt::decrypt($entry->Daily_Duration);
             $entry->Notes = Crypt::decrypt($entry->Notes);
 
-            // Decrypt other encrypted fields similarly
+            // Decrypt other encrypted fields 
         }
     
         return $data;
     
 
-        // $data = DB::table('Diary')->get()->toArray();
-    
-        // return $data;
     }
 
         
     public function ReadData(){
-        // $data = DB::select('select * from Diary');
-        // make statemetn or method to have it so that depending which user is logged in, 
-        // it uses the member id  to show the specific data that that user has created which is assigned to their member id
-        // u can maybe do this with sql statmet
+
         $data = DB::table('Diary')->where('Member_ID', '=', $this->Filter)->get()->toArray();
 
         foreach ($data as $entry) {
@@ -167,7 +161,7 @@ class DiaryModel extends Model implements CRUDInterface
             $entry->Daily_Duration = Crypt::decrypt($entry->Daily_Duration);
             $entry->Notes = Crypt::decrypt($entry->Notes);
 
-            // Decrypt other encrypted fields similarly
+            // Decrypt other encrypted fields 
         }
 
 
@@ -183,16 +177,3 @@ class DiaryModel extends Model implements CRUDInterface
 
 }
 
-
-
-// <!-- implement attributes similar to how u did for workout controllers  -->
-// <!-- do the get and set functions -->
-// <!-- use arryays where it says arrays in the model on class diagram -->
-// <!-- keep function creat data etc empty -->
-
-
-
-
-// <!-- after done the coding from stuff from class diagarm then create tables in sqlit -->
-
-// <!-- After models and controllers, work on interfaces, then connect diffrent entity realtions together-->

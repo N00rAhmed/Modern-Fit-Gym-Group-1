@@ -11,9 +11,7 @@ use App\Models\StaffModel;
 class RegistrationController extends Controller
 {
     public function index(){
-        // 'view.register'
-        // Show the registration form
-        // return view('register');
+
         $accounts = RegistrationModel::all();
 
         return view('admin', ['accounts' => $accounts]);

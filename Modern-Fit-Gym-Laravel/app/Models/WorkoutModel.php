@@ -98,14 +98,14 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
         // Fetch all data after insertion (if needed)
         $data = DB::table('Workout Plan')->get()->toArray();
     
-        // Decrypt specific fields in each entry
+        // Decrypt specific fields 
         foreach ($data as $entry) {
             $entry->Exercise_Name = Crypt::decrypt($entry->Exercise_Name);
             $entry->Excercise_Type = Crypt::decrypt($entry->Excercise_Type);
             $entry->Description = Crypt::decrypt($entry->Description);
             $entry->Amount = Crypt::decrypt($entry->Amount);
     
-            // Decrypt other encrypted fields similarly
+            // Decrypt  encrypted fields 
         }
     
         return $data;
@@ -121,7 +121,7 @@ class WorkoutModel extends Model implements CRUDInterface, Subject
             $entry->Description = Crypt::decrypt($entry->Description);
             $entry->Amount = Crypt::decrypt($entry->Amount);
     
-            // Decrypt other encrypted fields similarly
+            // Decrypt  encrypted fields 
         }
 
 
