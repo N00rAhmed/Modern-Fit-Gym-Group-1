@@ -10,3 +10,47 @@ main h1 {
 main p {
     text-align: center;
 }
+
+.cards {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    padding: 5%;
+    padding-top: 5px;
+}
+
+.card {
+    background-color: #0d96b4;
+    color: black;
+    padding: 1rem;
+    width: 300px;
+    height: 300px;
+    margin: 10px; /* Add margin between cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 1800px) {
+    .cards {
+        justify-content: center; /* Center cards on larger screens */
+    }
+}
+
+@media (max-width: 1400px) {
+    .cards {
+        padding: 2.5%;
+        padding-top: 5px;
+    }
+}
+
+@media (max-width: 1270px) {
+    .cards {
+        justify-content: flex-start; /* Align cards to the start on smaller screens */
+    }
+
+    .card {
+        width: calc(33.33% - 20px); /* Adjust the width and margin as needed */
+        height: auto;
+        margin-bottom: 10px;
+    }
+}

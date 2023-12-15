@@ -1,6 +1,7 @@
 main {
     width: 90%;
     margin: auto;
+    padding-bottom: 250px;
 }
 
 main h1 {
@@ -44,6 +45,12 @@ legend {
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .coloured-button {
