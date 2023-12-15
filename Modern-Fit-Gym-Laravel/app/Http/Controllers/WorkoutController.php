@@ -30,8 +30,15 @@ class WorkoutController extends Controller implements SearchFunctionInterface
     }
     public function showWorkoutUser(){
         $workoutData = new WorkoutModel();
-        $data = $workoutData->ReadData();
-        return view('regime', ['data' => $data]);
+        $value = session()->Get('MID');
+        if (isset($value)){
+            $workoutData->setFilter($value);
+            $data = $workoutData->ReadData();
+            return view('workout', ['data' => $data]);
+        }
+        else{
+            return view('workout', ['data' => 'fail']);
+        }
     }
 
 
