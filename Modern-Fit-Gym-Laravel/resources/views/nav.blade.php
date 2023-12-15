@@ -33,12 +33,10 @@
                 $MID = Session()->Get('MID');
                 $SID = Session()->Get('SID');
                 if (isset($MID)){
-                    echo "<a href='/diary' class='navMenu'>Diary</a>";
-                    echo "<a href='/workout' class='navMenu'>Workout</a>";
+                    echo "<a href='/Member' class='navMenu'>Menu</a>";
                 }
                 elseif(Isset($SID)){
-                    echo "<a href='/Regime' class='navMenu'>Regime</a>";
-                    echo "<a href='/Member' class='navMenu'>View Members</a>";
+                    echo "<a href='/trainer' class='navMenu'>Menu</a>";
                 }
                 if (isset($MID)){
                     echo '<a href="/?logout=true" class="navMenu" id="logout">Logout</a>';
