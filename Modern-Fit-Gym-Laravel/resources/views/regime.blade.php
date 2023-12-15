@@ -48,7 +48,6 @@
             <thead>
             <tr>
             <th>Workout_ID</th>
-                    <th>Staff_ID</th>
                     <th>Member_ID</th>
                     <th>Name</th>
                     <th>Type</th>
@@ -62,7 +61,6 @@
                     foreach ($data as $data){
                         echo "<tr>";
                         echo "<td>" . $data->Workout_ID . "</td>";
-                        echo "<td>" . $data->Staff_ID . "</td>";
                         echo "<td>" . $data->Member_ID . "</td>";
                         echo "<td>" . $data->Exercise_Name . "</td>";
                         echo "<td>" . $data->Excercise_Type . "</td>";
@@ -73,7 +71,6 @@
                 }
                 else{
                     echo "<tr>";
-                    echo "<td>No data available</td>";
                     echo "<td>No data available</td>";
                     echo "<td>No data available</td>";
                     echo "<td>No data available</td>";
