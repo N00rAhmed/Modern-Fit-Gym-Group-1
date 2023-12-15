@@ -31,7 +31,7 @@ class WorkoutController extends Controller implements SearchFunctionInterface
     public function showWorkoutUser(){
         $workoutData = new WorkoutModel();
         $data = $workoutData->ReadData();
-        return view('regime', ['data' => $data]);
+        return view('workout', ['data' => $data]);
     }
 
 

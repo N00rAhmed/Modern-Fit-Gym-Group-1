@@ -110,6 +110,7 @@ class DiaryModel extends Model implements CRUDInterface
     
         // Check if the entry already exists
         $existingData = DB::table('Diary')
+            ->where('MemberID', $MemberID)
             ->where('Notes', $notes)
             // Add more conditions as needed to uniquely identify a record
             ->first();

@@ -40,11 +40,6 @@
                 <th>Amount</th>
             </tr>
             <tr>
-                <td><input type="text" name="member_id" value="Data 1"></td>
-                <td><input type="text" name="name" value="Data 2"></td>
-                <td><input type="text" name="type" value="Data 3"></td>
-                <td><input type="text" name="description" value="Data 4"></td>
-                <td><input type="text" name="amount" value="Data 5"></td>
 
                 @if(is_array($data) || is_object($data))
         @foreach ($data as $data1)
@@ -82,29 +77,6 @@
     </form>
 </div>
 
-<div class="table-with-search">
-    <form action="members_process.php" method="post">
-        <div class="search-container">
-            <input type="text" id="searchBar" name="searchBar" placeholder="Search Members">
-        </div>
-        <table class="table">
-            <caption>Members</caption>
-            <tr>
-                <th>Member_ID</th>
-                <th>First name</th>
-                <th>Last name</th>
-            </tr>
-            <tr>
-                <td><input type="text" name="member_id" value="Data 1"></td>
-                <td><input type="text" name="first_name" value="Data 2"></td>
-                <td><input type="text" name="last_name" value="Data 3"></td>
-            </tr>
-            <tr>
-                <td colspan="3"><input type="submit" value="Submit"></td>
-            </tr>
-        </table>
-    </form>
-</div>
     </div>
     </div>
     </main>
