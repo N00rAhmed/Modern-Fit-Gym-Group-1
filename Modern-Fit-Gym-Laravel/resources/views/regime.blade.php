@@ -26,7 +26,7 @@
             <?php
             $value = session()->get('SID');
             if (isset($value)){
-              echo "<input class='hide' type='text' name='id' id='id' value='" . $value . "'>";
+              echo "<input class='hide' type='text' name='idS' id='idS' value='" . $value . "'>";
             }
             ?>
             <input type="text" name="id" id="id" placeholder="Member ID" />
