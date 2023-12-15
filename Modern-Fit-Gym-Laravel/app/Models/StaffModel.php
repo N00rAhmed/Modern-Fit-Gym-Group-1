@@ -106,13 +106,12 @@ class StaffModel extends Model implements CRUDInterface, Observer
 
     }
     public function SendEmail(){
-            // Send email when new data is inserted
-            Mail::send('mail', ['name' => 'piyumikablog'], function ($message) {
-                $message->to('tronn232003@gmail.com', 'Recipient Name')->subject('Subject of Email');
-                $message->from('noor.ahmed232003@outlook.com', 'Sender Name');
-            });
-            // implementation was halted due to time constraits
+        // Send email when new data is inserted
+        \Mail::send('mail', ['name' => 'piyumikablog'], function ($message) {
+            $message->to('tronn232003@gmail.com', 'Recipient Name')->subject('Subject of Email');
+            $message->from('noor.ahmed232003@outlook.com', 'Sender Name');
+        });
+        // implementation was halted due to time constraints
     }
-
-
+    
 }
