@@ -14,8 +14,8 @@
         <h1>Welcome Trainer</h1>
 
         <div class="cards">
-            <div class="card"><a href="/viewDiary">View diary</a></div> 
-            <div class="card"><a href="/regime">View Regime</a></div> 
+            <div class="card"><a href="/viewDiary">View Members diary</a></div> 
+            <div class="card"><a href="/regime">Regime</a></div> 
         </div>
 
     </main>
