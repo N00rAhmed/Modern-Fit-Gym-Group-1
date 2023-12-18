@@ -9,15 +9,6 @@ use App\Models\Interfaces\SearchFunctionInterface;
 // class Workout extends SearchFunction
 class WorkoutController extends Controller implements SearchFunctionInterface
 {
-    private $WorkoutID = 2;
-    private $StaffID = 3;
-    private $MemberID = 4;
-    private $ExcerciseName = "run";
-    private $ExcerciseType = "excercise type";
-    private $Description = "description";
-    private $Amount = 21;
-
-
     public function showWorkout(){
         $workoutData = new WorkoutModel();
         $data = $workoutData->ReadData();
