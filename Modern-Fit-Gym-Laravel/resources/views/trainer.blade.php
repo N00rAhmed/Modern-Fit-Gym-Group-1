@@ -15,7 +15,7 @@
 
         <div class="cards">
             <div class="card"><a href="/viewDiary">View Members diary</a></div> 
-            <div class="card"><a href="/regime">Regime</a></div> 
+            <div class="card"><a href="/regime">Workout</a></div> 
         </div>
 
     </main>
