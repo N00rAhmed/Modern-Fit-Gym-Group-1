@@ -27,11 +27,6 @@
 
     </footer>
 
-    <?php
-    $value = session()->get('MID');
-    var_dump($value);
-    ?>
-
     @endsection 
 
 </body>

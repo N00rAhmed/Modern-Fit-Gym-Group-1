@@ -11,16 +11,6 @@ use App\Models\Interfaces\SearchFunctionInterface;
 
 class DiaryController extends Controller implements SearchFunctionInterface
 {
-    
-    private $MemberID = 1;
-    private $DiaryID = 1;
-    private $Date = 25/12/2024;
-    private $CalorieIntake = 32;
-    private $SupplementIntake = "protein";
-    private $Excercise = "pushups";
-    private $DailyDuration = 32;
-    private $Notes = "notes user written";
-
     public function showDiary(){
         $diaryData = new DiaryModel();
         $value = session()->Get('MID');
